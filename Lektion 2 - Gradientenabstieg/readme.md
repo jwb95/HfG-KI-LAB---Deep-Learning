@@ -8,3 +8,5 @@ In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus,
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/optimierung.png)
 
+Was ist Steigung?
+![](https://de.wikipedia.org/wiki/Steigung#/media/Datei:Slope_picture.svg)
