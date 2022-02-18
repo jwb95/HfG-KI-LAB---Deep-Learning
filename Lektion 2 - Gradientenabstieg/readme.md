@@ -1,4 +1,4 @@
-Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in dem Interval, welches von der roten (x0) und der blauen (x0+h) Linie eingefasst wird. Dieses Interval hat die Größe/Breite h. Lassen wir h nun kleiner werden, nähert sich die Hypotenuse der Tangente, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt, an. Ziehen wir einen ausreichend kleinen Anteil der Steigung dieser Tangente von x0 ab, so müsste sich x0 in Richtung 0 (wo sich das Minimum des grünen Graphen befindet) bewegen. Nach diesem Prinzip lässt sich x dem globalen Minimum jeder konvexen Funktion schrittweise annähern.
+Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in dem Interval, welches von der roten (x0) und der blauen (x0+h) Linie eingefasst wird. Dieses Interval hat die Größe/Breite h. Lassen wir h nun kleiner werden, nähert sich die Hypotenuse der Tangente, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt, an. Ziehen wir einen ausreichend kleinen Anteil der Steigung dieser Tangente von x0 ab, so müsste sich x0 in Richtung 0 (wo sich das Minimum des grünen Graphen befindet) bewegen. Nach diesem Prinzip lässt sich x0 dem globalen Minimum jeder konvexen Funktion schrittweise annähern.
 
 
 Desmos-Graph: https://www.desmos.com/calculator/wrkow3r3iv
@@ -33,11 +33,17 @@ Bemerke, dass der folgende Ausdruck nichts anderes bedeutet als die Steigung der
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D)
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D) bedeutet lediglich, dass wir betrachten wollen, was der Ausdruck, welchem es voransteht, also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D) annähert, während sich h 0 annähert.
-Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+h betrachten und nun die Größe des Intervals zunehmend kleiner werden lassen.
-Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Trotzdem liefert es Erkenntnis zu betrachten, was passiert, wenn h einen Wert, der sehr nah an 0 ist, annimmt.
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D) bedeutet lediglich, dass wir betrachten wollen, was sich der Ausdruck, welchem es voransteht, also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D) annähert, während sich h 0 annähert.
+Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+h betrachten und nun die Größe des Intervals zunehmend 0 annähern.
+Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Jedoch liefert die geometrische Betrachtung dessen, was passiert, wenn h einen Wert, der sehr nah an 0 ist, annimmt, Erkenntnis:
 
 Wenn wir im Desmos-Graphen h zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
 Bewegen wir anschließend den Fader von x0 sehen wir, dass die schwarze Linie für jedes x0 die entsprechende Tangente quasi abbildet.
 
-Die Ableitung einer Funktion gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x) für jedes x an.
+Die Ableitung einer Funktion gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x)) für jedes x an.
+An den Ablauf des Optimierungsverfahrens erinnernd, nach welchem wir bei jedem Optimierungsschritt von x0 einen ausreichend kleinen Teil der Steigung der den Graphen von f(x) am Punkt (x0, f(x0)) berührenden Tangente abziehen, benötigen wir also die Ableitung von f(x).
+
+Den Optimierungsschritt können wir folgendermaßen schreiben, wobei x_n die Schätzung von x0 nach n Schritten ist, entsprechend x_n+1 x0 nach n+1 Schritten darstellt und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Calpha) für die 'learningrate' steht, welche ein vom User heuristisch festgelegter kleiner Faktor ist, der sicherstellen soll, dass wir von x_n nicht mehr als einen ausreichend kleinen Teil der Ableitung von f(x_n) abziehen.
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%20%5Calpha%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7Bf%28x_n&plus;h%29%20-%20f%28x_n%29%7D%7Bh%7D)
+
