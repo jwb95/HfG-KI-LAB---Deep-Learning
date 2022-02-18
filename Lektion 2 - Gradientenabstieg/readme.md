@@ -2,12 +2,21 @@ Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in de
 
 Desmos-Graph: https://www.desmos.com/calculator/wrkow3r3iv
 
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/steigung.png)
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/tangente.png)
 
 In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x in Richtung des Minimums von f(x)=x^2 zu optimieren.
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/optimierung.png)
 
-Was ist Steigung?
-![](https://math.lakschool.com/de/themen/lineare_funktionen/lineare_funktion.png)
+Was ist ein Quotient?
+
+Der Quotient drückt ein Verhältnis von zwei Größen als Resultat der Division der einen Größe durch die andere aus.
+Ist das Verhältnis von Apfelkuchen zu Äpfeln 1 zu 3, so ist der Quotient 1:3 oder als Bruch geschrieben 1/3.
+
+Steigung ist eine Form eines Quotienten, die das Verhältnis von (räumlicher) vertikaler Zunahme zu horizontaler Zunahme beschreibt.
+Legt eine Bergsteigerin in einem Interval ihrer Wanderung 1km parallel zur (vereinfachend) flachen Erdscheibe
+und währenddessen 100 Höhenmeter zurück, so betrug die Steigung in diesem Interval 100m:1000m, also 1/10.
+Im Sinne des folgenden Schaubilds wäre dy=100m und dx=1000m.
+
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/steigung.png)
 
