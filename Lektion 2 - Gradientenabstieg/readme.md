@@ -4,7 +4,7 @@ Desmos-Graph: https://www.desmos.com/calculator/wrkow3r3iv
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/steigung.png)
 
-In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges x zwischen -4 und 4 in Richtung des Minimums von f(x)=x^2 zu optimieren.
+In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x in Richtung des Minimums von f(x)=x^2 zu optimieren.
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/optimierung.png)
 
