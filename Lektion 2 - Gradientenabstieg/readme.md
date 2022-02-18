@@ -1,1 +1,2 @@
-<iframe src="https://www.desmos.com/calculator/9jtfgg5f5b?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+!(https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/steigung.png?raw=true)
+
