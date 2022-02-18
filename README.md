@@ -2,4 +2,4 @@
 
 Intro to Deep Learning for art-students.
 
-![alt text]https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%201%20-%20StyleGAN2/media/interpolations/3_interp_met.png?raw=true)
+![alt text](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%201%20-%20StyleGAN2/media/interpolations/3_interp_met.png?raw=true)
