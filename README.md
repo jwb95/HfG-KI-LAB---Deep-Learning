@@ -1,3 +1,3 @@
 # HfG-KI-LAB
 
-Intro to Deep Learning for non-scientists.
+Intro to Deep Learning for art-students.
