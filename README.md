@@ -1,5 +1,5 @@
 # HfG-KI-LAB
 
-Intro to Deep Learning for art-students.
+Einführung in Deep Learning für Kunststudent/innen.
 
 ![alt text](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%201%20-%20StyleGAN2/media/interpolations/3_interp_met.png?raw=true)
