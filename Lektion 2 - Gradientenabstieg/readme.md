@@ -5,7 +5,9 @@ Desmos-Graph: https://www.desmos.com/calculator/wrkow3r3iv
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/tangente.png)
 
-In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x in Richtung des Minimums von f(x)=x^2 zu optimieren.
+In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x0 in Richtung des Minimums von  ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D) zu optimieren.
+
+
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/optimierung.png)
 
@@ -35,15 +37,37 @@ Bemerke, dass der folgende Ausdruck nichts anderes bedeutet als die Steigung der
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D) bedeutet lediglich, dass wir betrachten wollen, was sich der Ausdruck, welchem es voransteht, also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D) annähert, während sich h 0 annähert.
 Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+h betrachten und nun die Größe des Intervals zunehmend 0 annähern.
-Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Jedoch liefert die geometrische Betrachtung dessen, was passiert, wenn h einen Wert, der sehr nah an 0 ist, annimmt, Erkenntnis:
 
+Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Jedoch liefert die geometrische Betrachtung dessen, was passiert wenn h einen Wert, der sehr nah an 0 ist, annimmt, Erkenntnis:
 Wenn wir im Desmos-Graphen h zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
 Bewegen wir anschließend den Fader von x0 sehen wir, dass die schwarze Linie für jedes x0 die entsprechende Tangente quasi abbildet.
 
 Die Ableitung einer Funktion gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x)) für jedes x an.
 An den Ablauf des Optimierungsverfahrens erinnernd, nach welchem wir bei jedem Optimierungsschritt von x0 einen ausreichend kleinen Teil der Steigung der den Graphen von f(x) am Punkt (x0, f(x0)) berührenden Tangente abziehen, benötigen wir also die Ableitung von f(x).
 
-Den Optimierungsschritt können wir folgendermaßen schreiben, wobei x_n die Schätzung von x0 nach n Schritten ist, entsprechend x_n+1 x0 nach n+1 Schritten darstellt und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Calpha) für die 'learningrate' steht, welche ein vom User heuristisch festgelegter kleiner Faktor ist, der sicherstellen soll, dass wir von x_n nicht mehr als einen ausreichend kleinen Teil der Ableitung von f(x_n) abziehen.
+Finden wir nun algebraisch die Ableitung von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D).
+Dazu ersetzen wir in der allgemeinen Definition der Ableitung einfach den allgemeinen Ausdruck ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29) durch ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%5E%7B2%7D) und erhalten:
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%20%5Calpha%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7Bf%28x_n&plus;h%29%20-%20f%28x_n%29%7D%7Bh%7D)
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7B%28x&plus;h%29%5E%7B2%7D%20-%20x%5E%7B2%7D%7D%7Bh%7D)
+
+Die 1. binomische Formel nutzend:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7Bx%5E%7B2%7D%20&plus;%202xh%20&plus;%20h%5E%7B2%7D-%20x%5E%7B2%7D%7D%7Bh%7D)
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%5E%7B2%7D) und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20-x%5E%7B2%7D) löschen sich aus:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7B2xh%20&plus;%20h%5E%7B2%7D%7D%7Bh%7D)
+
+Aus ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%202xh) und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h%5E%7B2%7D) lassen sich jeweils ein ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h) herauskürzen:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5C2x&plus;h)
+
+Für diesen Ausdruck ist es nun völlig legitim ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h%3D0) zu setzen, sodass wir letztlich die Ableitung von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D) erhalten:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%202x)
+
+
+Den Optimierungsschritt können wir also folgendermaßen schreiben, wobei x_n die Schätzung von x0 nach n Schritten ist, entsprechend x_n+1 x0 nach n+1 Schritten darstellt und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Calpha) für die 'learningrate' steht, welche ein vom User heuristisch festgelegter kleiner Faktor ist, der sicherstellen soll, dass wir von x_n nicht mehr als einen ausreichend kleinen Teil der Ableitung von f(x_n) abziehen.
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%202x%5Calpha)
 
