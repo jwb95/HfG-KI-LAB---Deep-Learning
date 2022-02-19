@@ -27,16 +27,17 @@ Im Sinne des folgenden Schaubilds wäre Δy=100m und Δx=1000m.
 
 Was ist eine Ableitung und wozu brauchen wir sie?
 
-Die allgemeine Definition der Ableitung für eine Funktion f(x) ist:
+Die allgemeine Definition der Ableitung ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) für eine Funktion f(x) ist:
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D)
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D%3D%5Clim_%7Bdx%5Cto%5C0%7D%5Cfrac%7Bf%28x&plus;dx%29-f%28x%29%7D%7Bdx%7D)
 
-Bemerke, dass der folgende Ausdruck nichts anderes bedeutet als die Steigung der Funktion f(x) im Interval x bis x+h:
+Bemerke, dass der folgende Ausdruck nichts anderes bedeutet als die Steigung der Funktion f(x) im Interval x bis x+dx:
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D)
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;dx%29%20-%20f%28x%29%7D%7Bdx%7D)
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D) bedeutet lediglich, dass wir betrachten wollen, was sich der Ausdruck, welchem es voransteht, also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;h%29%20-%20f%28x%29%7D%7Bh%7D) annähert, während sich h 0 annähert.
-Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+h betrachten und nun die Größe des Intervals zunehmend 0 annähern.
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bdx%5Cto%5C0%7D) bedeutet lediglich, dass wir betrachten wollen, was sich der Ausdruck, welchem es voransteht, also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bf%28x&plus;dx%29%20-%20f%28x%29%7D%7Bdx%7D) annähert, während sich dx 0 annähert.
+Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+dx betrachten und nun die Größe des Intervals zunehmend 0 annähern.
+Daher beschreibt die Ableitung in Abhängigkeit von x eine Steigung und ist folglich auch als Quotient ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) schreibbar, wobei dx eine Veränderung in x darstellt, die eine Veränderung von df im Funktionswert von f nach sich zieht, wobei wir explizit den Quotienten meinen, dem sich ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) annähert während sich dx 0 annähert.
 
 Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Jedoch liefert die geometrische Betrachtung dessen, was passiert wenn h einen Wert, der sehr nah an 0 ist, annimmt, Erkenntnis:
 Wenn wir im [Desmos-Graphen](https://www.desmos.com/calculator/weppwasdzw) h zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
