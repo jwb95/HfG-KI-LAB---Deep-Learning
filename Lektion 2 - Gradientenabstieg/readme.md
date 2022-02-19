@@ -39,7 +39,7 @@ Bemerke, dass der folgende Ausdruck nichts anderes bedeutet als die Steigung der
 Die Definition der Ableitung kann folglich gelesen werden als: Jene Funktion, welcher wir uns nähern, wenn wir die Steigung von f(x) im Interval x bis x+h betrachten und nun die Größe des Intervals zunehmend 0 annähern.
 
 Bemerke, dass die Definition der Ableitung für h = 0 nicht definiert ist, da Division durch 0 nicht definiert ist. Wir können also nicht ohne Weiteres h = 0 setzen, um die Ableitung für ein f(x) auszurechnen. Jedoch liefert die geometrische Betrachtung dessen, was passiert wenn h einen Wert, der sehr nah an 0 ist, annimmt, Erkenntnis:
-Wenn wir im Desmos-Graphen h zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
+Wenn wir im [Desmos-Graphen](https://www.desmos.com/calculator/wrkow3r3iv) h zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
 Bewegen wir anschließend den Fader von x0 sehen wir, dass die schwarze Linie für jedes x0 die entsprechende Tangente quasi abbildet.
 
 Die Ableitung einer Funktion gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x)) für jedes x an.
