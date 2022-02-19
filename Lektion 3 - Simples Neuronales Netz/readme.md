@@ -15,7 +15,7 @@ Betrachte ein Datenset (der Form [x0, x1] -> y) bestehend aus den folgenden 4 Tr
 
 [1, 1] -> 1
 
-Wir sehen, immer dann, wenn x1 = 1, soll das Netz den Wert 1, ansonsten 0 ausgeben.
+Wir sehen: Immer dann, wenn x1 = 1, soll das Netz den Wert 1, ansonsten 0 ausgeben.
 
 
 Mittels welchem Algorithmus können wir die Gewichte entsprechend anpassen?
