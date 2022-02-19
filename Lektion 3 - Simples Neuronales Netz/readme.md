@@ -38,17 +38,22 @@ Errechnen wir dann den Squared Error:
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20L%280.1%2C1%29%3D%280.1-1%29%5E%7B2%7D%3D%28-0.9%29%5E%7B2%7D%3D0.81)
 
 Wir sehen: Die Performance des Netzes lässt zu wünschen übrig und es gilt die Gewichte des Netzes so anzupassen, dass L sinkt.
-Stellen wir zunächst fest: Damit L sinkt, müsste x verändert werden. Um festzutellen, ob x erhöht oder verringert werden müsste, betrachten wir die Ableitung von L(x,y=1) in Abhängigkeit von x. Das bedeutet: nehmen wir das Label 1 als fixes y, dann gibt die Ableitung von L(x,1) in Abhängigkeit von x die Steigung der Tangente an, die den Graphen von L(x,1) am Punkt (x, L(x,1)) berührt. Ist diese am Punkt x = 0.1 positiv, so müsste x um einen ausreichend kleinen Betrag verringert werden und ist sie negativ, so müsste x entsprechend um einen ausreichend kleinen Betrag erhöht werden.
+Damit L sinkt, müsste x verändert werden. Um festzutellen, ob x erhöht oder verringert werden müsste, betrachten wir die Ableitung von L(x,y) in Abhängigkeit von x. Diese gibt die Steigung der Tangente an, die für ein fixes y den Graphen von L(x,y) am Punkt (x, L(x,y)) berührt. Wir erinnern uns, dass diese auch als Quotient ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) schreibbar ist.
 
-Jedoch ist x keine 'trainierbare' Variable, die wir direkt verändern können sondern hängt selbst wiederum von w0, w1 und den Inputs (x0, x1) ab.
-x ist also eine Funktion von w0, x0, w1 und x1:
+Nun ist x keine 'trainierbare' Variable, die wir direkt verändern können sondern hängt selbst wiederum von w0, w1 und den Inputs (x0, x1) ab.
+x ist eine Funktion von w0, x0, w1 und x1:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28w_0%2Cw_1%2Cx_0%2Cx_1%29%20%3D%20w_0x_0&plus;w_1x_1)
 
 Wir müssen also die selbe Frage erneut für jedes Gewicht stellen: Wie müsste bspw. w0 verändert werden, damit x steigt bzw. sinkt?
-Dazu betrachten wir die Ableitung von x(w0, x0=1, w1=0.3, x1=1) am Punkt 
+Dazu betrachten wir die Ableitung von x(w0, x0, w1, x1) in Abhängigkeit von w0. Als Quotient ausgedrückt: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
-Dieser bedeutet das Verhältnis zwischen der Veränderung des Wertes von L (=dL) zur Veränderung in x (=dx), der sich der Ausdruck annähert während sich dx 0 annähert. Das ist nichts anderes als die Ableitung von L in Abhängigkeit von x.
+Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, ca. dw0, sodass sich gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D) der Funktionswert von x um etwa dx verändere. Gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) würde sich dann der Funktionswert von L um etwa dL verändern. Daher ist der Quotient, der das Verhältnis der Veränderung von L in Bezug zu einer sich 0 annähernden Veränderung in w0 angibt, ausdrückbar durch:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D%3D%5Cfrac%7BdL%7D%7Bdx%7D%5Ccdot%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
+
+Gemäß Gradient Descent müsste sich wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D) abziehen L sinken.
+Analog sinkt L, wenn wir von w1 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_1%7D) abziehen.
 
 Das 'Training' unseres Neuronalen Netzes besteht aus folgendem Loop, den wir ausführen, bis das Netz eine gute Performance zeigt
   1. Aus einem Datenset ziehen wir ein Trainingsbeispiel [[x0, x1], y]
