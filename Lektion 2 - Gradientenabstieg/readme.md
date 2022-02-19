@@ -58,7 +58,7 @@ Die 1. binomische Formel nutzend:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7B2xh%20&plus;%20h%5E%7B2%7D%7D%7Bh%7D)
 
-Aus ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%202xh) und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h%5E%7B2%7D) lassen sich jeweils ein ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h) herauskürzen:
+Aus ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%202xh) und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h%5E%7B2%7D) lässt sich jeweils ein ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20h) herauskürzen:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5C2x&plus;h)
 
@@ -69,5 +69,5 @@ Für diesen Ausdruck ist es nun völlig legitim ![](https://latex.codecogs.com/p
 
 Den Optimierungsschritt können wir also folgendermaßen schreiben, wobei x_n die Schätzung von x0 nach n Schritten ist, entsprechend x_n+1 x0 nach n+1 Schritten darstellt und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Calpha) für die 'learningrate' steht, welche ein vom User heuristisch festgelegter kleiner Faktor ist, der sicherstellen soll, dass wir von x_n nicht mehr als einen ausreichend kleinen Teil der Ableitung von f(x_n) abziehen.
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%202x%5Calpha)
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%202x_n%5Calpha)
 
