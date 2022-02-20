@@ -10,4 +10,9 @@ Verfügte das Neuron unseres Netzes über einen Bias b, so wäre die Funktion x 
 
 Übliche Non-linearities in tiefen neuronalen Netzen sind ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) oder ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)).
 
+If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input, which is not enough to form a universal function approximator
+
+https://stackoverflow.com/questions/2480650/what-is-the-role-of-the-bias-in-neural-networks
+
 ![](https://miro.medium.com/max/1400/1*KHs1Chs6TCJDTIIQVyIJxg.png)
+
