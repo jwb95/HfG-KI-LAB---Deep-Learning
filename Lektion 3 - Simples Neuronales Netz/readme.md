@@ -24,14 +24,13 @@ Zunächst benötigen wir eine konvexe Fehlerfunktion (= lossfunction) L(x,y). Hi
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20L%28x%2Cy%29%20%3D%20%28x-y%29%5E%7B2%7D)
 
 Der Squared Error besitzt eine Eigenschaft, die ihn für unser Problem als Fehlerfunktion qualizifiert. Betrachten wir 2 Trainingsbeispiele mit jeweils dem Label ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a) und nehmen wir an, das Netz gibt für das erste Beispiel ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a&plus;b) und für das zweite ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a-b) aus, dann ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20L%28a&plus;b%2Ca%29%3DL%28a-b%2Ca%29).
-
 Übersetzt: Es ist egal, ob das Netz für ein Trainingsbeispiel ein x ausgibt, welches zu hoch oder zu niedrig ist. Wesentlich für den Wert, den die Lossfunction annimmt ist nur der absolute Abstand von x zum Label y.
 
 Zunächst initialisieren wir das Netz mit zufälligen Gewichten, z.B. w0 = 0.3 und w1 = -0.2
 
 Ziehen wir nun ein Trainingsbeispiel, z.B. [1, 1] -> 1 und errechnen für dieses die Ausgabe des Netzes:
 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20NN%281%2C1%29%3D1%5Ccdot%200.3&plus;1%5Ccdot%20%28-0.2%29%3D0.1)
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28w_0%3D0.3%2Cx_0%3D1%2C%20w_1%3D-0.2%2Cx_1%3D1%29%29%20%3D%201%5Ccdot%200.3&plus;1%5Ccdot%20%28-0.2%29%3D0.1)
 
 Errechnen wir dann den Squared Error:
 
@@ -53,7 +52,7 @@ Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, c
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D%3D%5Cfrac%7BdL%7D%7Bdx%7D%5Ccdot%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
 Da in der Erklärung nur von 'etwa' gesprochen wird ist das Schließen auf eine Gleichung, obwohl sie 'etwa stimmen müsste' nicht korrekt.
-Doch sie stimmt tatsächlich. Weiter unten wird ein Beweis geliefert.
+Doch sie stimmt tatsächlich. Siehe weiter unten den Beweis für die 'Chain Rule'.
 
 Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von L in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w1, x1 und y den Graphen von L am Punkt (w0, L((w0,x0,w1,x1),y)) berührt.
 Gemäß Gradient Descent wird L, wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) abziehen, sinken.
@@ -73,3 +72,35 @@ Da wir also in jeder Iteration des Loops die beiden obigen Ableitungen benötige
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_0%7D%20%3D%202%28x-y%29%20x_0)
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_1%7D%20%3D%202%28x-y%29%20x_1)
+
+
+Beweise
+
+1. Beweis für die 'Chain Rule', die besagt, dass: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdx%7D%3D%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Cfrac%7Bdg%28x%29%7D%7Bdx%7D)
+
+Beginnend mit der allgemeinen Definition der Ableitung für f(g(x)) in Abhängigkeit von x:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdx%7D%3D%5Clim_%7Bdx%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x&plus;dx%29%29-f%28g%28x%29%29%7D%7Bdx%7D)
+
+Den Teiler erweitern: dx = x - x + dx:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdx%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x&plus;dx%29%29-f%28g%28x%29%29%7D%7Bx-x&plus;dx%7D)
+
+Substitution: x + dx = a, wobei wir den Ausdruck dann im ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Ba%5Cto%5C%5Cx%7D) betrachten müssen, denn wenn wir dx dort betrachten wo sich dx 0 annähert, so folgt aus x + dx = a, dass wir mit a nur weiterarbeiten können, wenn sich a x annähert.
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Ba%5Cto%5C%5Cx%7D%20%5Cfrac%7Bf%28g%28a%29%29-f%28g%28x%29%29%7D%7Bx-a%7D)
+
+Bruch erweitern:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Ba%5Cto%5C%5Cx%7D%20%5Cfrac%7Bf%28g%28a%29%29-f%28g%28x%29%29%7D%7Bg%28a%29-g%28x%29%7D%5Ccdot%20%5Cfrac%7Bg%28a%29-g%28x%29%7D%7Bx-a%7D)
+
+Substitution: a = x + dx, wobei wir den Ausdruck dann im ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdx%5Cto%5C%5C0%7D) betrachten müssen,
+denn wenn wir a dort betrachten wo sich a x annähert, so folgt aus a = x + dx, dass wir mit dx nur weiterarbeiten können, wenn sich dx 0 annähert.
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdx%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x&plus;dx%29%29-f%28g%28x%29%29%7D%7Bg%28x&plus;dx%29-g%28x%29%7D%5Ccdot%20%5Cfrac%7Bg%28x&plus;dx%29-g%28x%29%7D%7Bdx%7D)
+
+Substitution: Für den ersen Bruch sei g(x+dx) - g(x) = dg(x), daraus folgt wir betrachten den ersten Bruch im ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdg%28x%29%5Cto%5C%5C0%7D)
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdg%28x%29%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x&plus;dg%28x%29%29%29-f%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Clim_%7Bdx%5Cto%5C%5C0%7D%5Cfrac%7Bg%28x&plus;dx%29-g%28x%29%7D%7Bdx%7D)
+
+
