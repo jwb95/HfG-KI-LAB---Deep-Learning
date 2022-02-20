@@ -27,7 +27,7 @@ Im Sinne des folgenden Schaubilds wäre Δy=100m und Δx=1000m.
 
 Was ist eine Ableitung und wozu brauchen wir sie?
 
-Die allgemeine Definition der Ableitung ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) für eine Funktion f(x) ist:
+Die allgemeine Definition der Ableitung ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) für eine Funktion f(x) in Abhängigkeit von x ist:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D%3D%5Clim_%7Bdx%5Cto%5C0%7D%5Cfrac%7Bf%28x&plus;dx%29-f%28x%29%7D%7Bdx%7D)
 
@@ -43,10 +43,10 @@ Bemerke, dass die Definition der Ableitung für dx = 0 nicht definiert ist, da D
 Wenn wir im [Desmos-Graphen](https://www.desmos.com/calculator/weppwasdzw) h (was stellvertretend für dx steht) zunehmend kleiner werden lassen und letztlich eine winzige Zahl (bspw. 0.0001) eintragen, sehen wir, dass die schwarze Linie sich zunehmend jener Tangente annähert, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt.
 Bewegen wir anschließend den Fader von x0 sehen wir, dass die schwarze Linie für jedes x0 die entsprechende Tangente quasi abbildet.
 
-Die Ableitung einer Funktion gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x)) für jedes x an.
-An den Ablauf des Optimierungsverfahrens erinnernd, nach welchem wir bei jedem Optimierungsschritt von x0 einen ausreichend kleinen Teil der Steigung der den Graphen von f(x) am Punkt (x0, f(x0)) berührenden Tangente abziehen, benötigen wir also die Ableitung von f(x).
+Die Ableitung einer Funktion von x in Abhängigkeit von x gibt also die Steigung der den Graphen berührenden Tangente am Punkt (x, f(x)) für jedes x an.
+An den Ablauf des Optimierungsverfahrens erinnernd, nach welchem wir bei jedem Optimierungsschritt von x0 einen ausreichend kleinen Teil der Steigung der den Graphen von f(x) am Punkt (x0, f(x0)) berührenden Tangente abziehen, benötigen wir also die Ableitung von f(x) in Abhängigkeit von x.
 
-Finden wir nun algebraisch die Ableitung von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D).
+Finden wir nun algebraisch die entsprechende Ableitung für ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D).
 Dazu ersetzen wir in der allgemeinen Definition der Ableitung einfach den allgemeinen Ausdruck ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29) durch ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%5E%7B2%7D) und erhalten:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Clim_%7Bh%5Cto%5C0%7D%5Cfrac%7B%28x&plus;h%29%5E%7B2%7D%20-%20x%5E%7B2%7D%7D%7Bh%7D)
