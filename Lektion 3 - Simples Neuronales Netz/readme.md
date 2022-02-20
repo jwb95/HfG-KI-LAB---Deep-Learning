@@ -81,9 +81,9 @@ Da wir in jeder Iteration des Loops die beiden obigen Ableitungen benötigen ber
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_1%7D%20%3D%202%28x-y%29%20x_1)
 
 
-### Beweise
+### Beweise/Ableitungen
 
-Beweis für die 'Chain Rule', die besagt, dass: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdx%7D%3D%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Cfrac%7Bdg%28x%29%7D%7Bdx%7D)
+#### Chain Rule: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdx%7D%3D%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Cfrac%7Bdg%28x%29%7D%7Bdx%7D)
 
 Beginnend mit der allgemeinen Definition der Ableitung für f(g(x)) in Abhängigkeit von x:
 
@@ -100,7 +100,7 @@ Per Definition der Ableitung:
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Cfrac%7Bdg%28x%29%7D%7Bdx%7D)
 
 
-Ableitung von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20L%28x-y%29%3D%28x-y%29%5E%7B2%7D) in Abhängigkeit von x:
+#### Ableitung von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20L%28x-y%29%3D%28x-y%29%5E%7B2%7D) in Abhängigkeit von x:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdx%7D%20%3D%20%5Clim_%7Bdx%5Cto%5C%5C0%7D%5Cfrac%7B%28x&plus;dx-y%29%5E%7B2%7D-%28x-y%29%5E%7B2%7D%7D%7Bdx%7D)
 
@@ -119,6 +119,24 @@ dx kürzen:
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdx%5Cto%5C%5C0%7D) auflösen:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%202x-2y%20%3D%202%28x-y%29)
+
+#### Ableitung von x = x0*w0 + x1*w1 in Abhängigkeit von w0:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%28x_0%2Cw_0%2Cx_1%2Cw_1%29%7D%7Bdw_0%7D%3D%5Clim_%7Bdw_0%5Cto%5C%5C0%7D%5Cfrac%7Bx_0%28w_0&plus;dw_0%29&plus;x_1w_1-%28x_0w_0&plus;x_1w_1%29%7D%7Bdw_0%7D)
+
+Distributivgesetz:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdw_0%5Cto%5C%5C0%7D%5Cfrac%7Bx_0w_0&plus;x_0dw_0&plus;x_1w_1-x_0w_0-x_1w_1%7D%7Bdw_0%7D)
+
+Zähler vereinfachen:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdw_0%5Cto%5C%5C0%7D%5Cfrac%7Bx_0dw_0%7D%7Bdw_0%7D)
+
+dw0 kürzen, dann ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdw_0%5Cto%5C%5C0%7D) auflösen:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3Dx_0)
+
+
 
 
 
