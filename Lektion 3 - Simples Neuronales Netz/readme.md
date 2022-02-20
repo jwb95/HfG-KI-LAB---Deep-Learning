@@ -1,4 +1,4 @@
-Das Schaubild zeigt eine Form eines sehr einfachen Neuronalen Netzes mit 2 Inputs (x0, x1) und einem Output y.
+Das Schaubild zeigt eine Form eines sehr einfachen Neuronalen Netzes mit 2 Inputs (x0, x1) und einem Output x. Der Knoten x kann als 'Neuron' bezeichnet werden.
 In dieser Lektion optimieren wir mittels Gradient Descent die zu Beginn zufällig initialisierten Gewichte des Netzes (w0, w1) derartig, dass das Netz anschließend ein spezifisches Problem lösen kann.
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%203%20-%20Simples%20Neuronales%20Netz/media/nn.jpg)
@@ -79,7 +79,6 @@ Da wir in jeder Iteration des Loops die beiden obigen Ableitungen benötigen ber
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_0%7D%20%3D%202%28x-y%29%20x_0)
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_1%7D%20%3D%202%28x-y%29%20x_1)
-
 
 ### Beweise/Ableitungen
 
