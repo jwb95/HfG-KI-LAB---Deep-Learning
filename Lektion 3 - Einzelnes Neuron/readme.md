@@ -1,7 +1,7 @@
 Das Schaubild zeigt eine Form eines sehr einfachen Neuronalen Netzes mit 2 Inputs (x0, x1) und einem Output x. Der Knoten x kann als 'Neuron' bezeichnet werden.
 In dieser Lektion optimieren wir mittels Gradient Descent die zu Beginn zufällig initialisierten Gewichte des Netzes (w0, w1) derartig, dass das Netz anschließend ein spezifisches Problem lösen kann.
 
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%203%20-%20Simples%20Neuronales%20Netz/media/nn.jpg)
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%203%20-%20Einzelnes%20Neuron/media/nn.jpg)
 
 Ziel des Trainings eines Neuronalen Netzes ist es, die Gewichte des Netzes so anzupassen, dass es anschließend
 sehr gut darin ist, für einen Input den richtigen Output auszugeben.
@@ -15,7 +15,7 @@ Betrachte ein Datenset (der Form [x0, x1] -> y) bestehend aus den folgenden 4 Tr
 Wir sehen: Immer dann, wenn x1 = 1, soll das Netz den Wert 1, ansonsten 0 ausgeben.
 Eindeutig würde das optimierte Netz wie im folgenden Schaubild aussehen:
 
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%203%20-%20Simples%20Neuronales%20Netz/media/nn_optimized.png)
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%203%20-%20Einzelnes%20Neuron/media/nn_optimized.png)
 
 Der Zweck des Optimierens Neuronaler Netze besteht darin, dass eine annehmbare Lösung eines Problems in Form der richtigen Anpassung der Gewichte automatisiert für komplizierte Probleme, für die im Gegensatz zu unserem Beispiel eine Lösung nicht unbedingt ersichtlich ist, gefunden werden kann. Nutzen wir dennoch das Beispiel, um uns mit dem gängigen Optimierungs-Algorithmus für Neuronale Netze vertraut zu machen.
 
@@ -134,9 +134,3 @@ Zähler vereinfachen:
 dw0 kürzen, dann ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdw_0%5Cto%5C%5C0%7D) auflösen:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3Dx_0)
-
-
-
-
-
-
