@@ -52,16 +52,24 @@ Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, c
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D%3D%5Cfrac%7BdL%7D%7Bdx%7D%5Ccdot%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
-Da in der Erklärung nur von 'etwa' gesprochen wird ist das Schließen auf eine Gleichung, obwohl sie 'etwa stimmen müsste', algebraisch nicht korrekt.
-Weiter unten wird ein Beweis geliefert warum sie tatsächlich stimmt.
+Da in der Erklärung nur von 'etwa' gesprochen wird ist das Schließen auf eine Gleichung, obwohl sie 'etwa stimmen müsste' nicht korrekt.
+Doch sie stimmt tatsächlich. Weiter unten wird ein Beweis geliefert.
 
-Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von C in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w0, w1 und y den Graphen von C am Punkt (w0, L((w0,x0,w1,x1),y)) berührt.
-Gemäß Gradient Descent müsste sich wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) abziehen L sinken.
+Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von L in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w1, x1 und y den Graphen von L am Punkt (w0, L((w0,x0,w1,x1),y)) berührt.
+Gemäß Gradient Descent wird L, wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) abziehen, sinken.
 Analog sinkt L, wenn wir von w1 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_1%7D) abziehen.
 
-Das 'Training' unseres Neuronalen Netzes besteht aus folgendem Loop, den wir ausführen, bis das Netz eine gute Performance zeigt
+Das 'Training' unseres Neuronalen Netzes besteht aus folgender Schleife, die wir ausführen bis für jedes Trainingsbeispiel ein akzeptabler Loss erzielt wird:
   1. Aus einem Datenset ziehen wir ein Trainingsbeispiel [[x0, x1], y]
   2. Wir geben die Inputs des Trainingsbeispiels (x0, x1) in das Netz und errechnen die Ausgabe x.
-  3. Wir evaluieren die Fehlerfunktion für das Trainingsbeispiel.
-  4. Wir optimieren die Gewichte mittels Gradient Descent.
+  4. Wir optimieren die Gewichte (w0, w1) mittels Gradient Descent, d.h. wir überschreiben die Gewichte folgendermaßen:
 
+     ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20w_0%20%3D%20w_0%20-%20%5Calpha%5Ccdot%20%5Cfrac%7BdC%7D%7Bdw_0%7D)
+     
+     ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20w_1%20%3D%20w_1%20-%20%5Calpha%5Ccdot%20%5Cfrac%7BdC%7D%7Bdw_1%7D)
+     
+Da wir also in jeder Iteration des Loops die beiden obigen Ableitungen benötigen berechnen wir sie vorab. Beweise für alle Ableitungen stehen am Ende.
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_0%7D%20%3D%202%28x-y%29%20x_0)
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_1%7D%20%3D%202%28x-y%29%20x_1)
