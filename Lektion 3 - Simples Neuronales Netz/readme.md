@@ -48,11 +48,15 @@ x ist eine Funktion von w0, x0, w1 und x1:
 Wir müssen also die selbe Frage erneut für jedes Gewicht stellen: Wie müsste bspw. w0 verändert werden, damit x steigt bzw. sinkt?
 Dazu betrachten wir die Ableitung von x(w0, x0, w1, x1) in Abhängigkeit von w0. Als Quotient ausgedrückt: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
-Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, ca. dw0, sodass sich gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D) der Funktionswert von x um etwa dx verändere. Gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) würde sich dann der Funktionswert von L um etwa dL verändern. Daher ist der Quotient, der das Verhältnis der Veränderung von L in Bezug zu einer sich 0 annähernden Veränderung in w0 angibt, ausdrückbar durch:
+Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, ca. dw0 (wobei dw0 von 0 kaum zu unterscheiden ist), sodass sich gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D) der Funktionswert von x um etwa dx verändere. Gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) würde sich dann der Funktionswert von L um etwa dL verändern. Daher ist der Quotient, der das Verhältnis der Veränderung von L in Bezug zu einer sich 0 annähernden Veränderung in w0 angibt, ausdrückbar durch:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D%3D%5Cfrac%7BdL%7D%7Bdx%7D%5Ccdot%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
-Gemäß Gradient Descent müsste sich wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D) abziehen L sinken.
+Da in der Erklärung nur von 'etwa' gesprochen wird ist das Schließen auf eine Gleichung, obwohl sie 'etwa stimmen müsste', algebraisch nicht korrekt.
+Weiter unten wird ein Beweis geliefert warum sie tatsächlich stimmt.
+
+Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von C in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w0, w1 und y den Graphen von C am Punkt (w0, L((w0,x0,w1,x1),y)) berührt.
+Gemäß Gradient Descent müsste sich wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B200%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) abziehen L sinken.
 Analog sinkt L, wenn wir von w1 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_1%7D) abziehen.
 
 Das 'Training' unseres Neuronalen Netzes besteht aus folgendem Loop, den wir ausführen, bis das Netz eine gute Performance zeigt
