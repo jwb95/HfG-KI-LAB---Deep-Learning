@@ -59,7 +59,7 @@ Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, c
 Da in der Erklärung nur von 'etwa' gesprochen wird ist das Schließen auf eine Gleichung, obwohl sie 'etwa stimmen müsste' nicht korrekt.
 Doch sie stimmt tatsächlich. Siehe im Abschnitt 'Beweise' weiter unten den Beweis für die 'Chain Rule'.
 
-Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von L in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w1, x1 und y den Graphen von L am Punkt (w0, L((w0,x0,w1,x1),y)) berührt.
+Wir haben also ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) bzw. ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%28w_0%2Cx_0%2Cw_1%2Cx_1%29%2Cy%29%7D%7Bdw_0%7D) gefunden und diese Ableitung von L in Abhängigkeit von w0 beschreibt die Steigung der Tangenten, die für ein fixes x1, w1, x1 und y den Graphen von L am Punkt (w0, L(x(w0,x0,w1,x1),y)) berührt.
 Gemäß Gradient Descent wird L, wenn wir von w0 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdw_0%7D) abziehen, sinken.
 Analog sinkt L, wenn wir von w1 einen ausreichend kleinen Teil von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_1%7D) abziehen.
 
