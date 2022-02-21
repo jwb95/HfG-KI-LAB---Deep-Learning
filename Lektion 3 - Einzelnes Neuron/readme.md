@@ -92,7 +92,7 @@ Bruch erweitern, was gemäß der Gesetze für Limits zulässig ist:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdx%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x&plus;dx%29%29-f%28g%28x%29%29%7D%7Bg%28x&plus;dx%29-g%28x%29%7D%5Ccdot%20%5Cfrac%7Bg%28x&plus;dx%29-g%28x%29%7D%7Bdx%7D)
 
-Substitution im ersten Bruch: g(x+dx)-(x) = dg(x), dann müssen wir den gesamten Bruch im ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdg%28x%29%5Cto%5C%5C0%7D) betrachten.
+Substitution im ersten Bruch: g(x+dx)-(x) = dg(x), dann müssen wir besagten Bruch im ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Clim_%7Bdg%28x%29%5Cto%5C%5C0%7D) betrachten.
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%3D%5Clim_%7Bdg%28x%29%5Cto%5C%5C0%7D%20%5Cfrac%7Bf%28g%28x%29&plus;dg%28x%29%29-f%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Clim_%7Bdx%5Cto%5C%5C0%7D%20%5Cfrac%7Bg%28x&plus;dx%29-g%28x%29%7D%7Bdx%7D)
 
