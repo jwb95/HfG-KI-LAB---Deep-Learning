@@ -49,10 +49,10 @@ x ist eine Funktion von w0, x0, w1 und x1:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28w_0%2Cw_1%2Cx_0%2Cx_1%29%20%3D%20w_0x_0&plus;w_1x_1)
 
-Die Inputs (x0, x1) können wir nicht verändern. Wir müssen also die selbe Frage erneut für jedes Gewicht stellen: Wie müsste bspw. w0 verändert werden, damit x steigt bzw. sinkt?
+Die Inputs (x0, x1) können wir nicht verändern. Wir müssen also folgende Frage für jedes Gewicht stellen: Wie müsste bspw. w0 verändert werden, damit x sich derartig verändert, dass L sinkt?
 Dazu betrachten wir die Ableitung von x(w0, x0, w1, x1) in Abhängigkeit von w0. Als Quotient ausgedrückt: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
-Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, ca. dw0 (wobei dw0 von 0 kaum zu unterscheiden ist), sodass sich gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D) der Funktionswert von x um etwa dx verändere, wobei dx von 0 ebenfalls kaum zu unterscheiden ist. Gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) würde sich dann der Funktionswert von L um etwa dL verändern. Daher ist der Quotient, der das Verhältnis der Veränderung von L in Bezug zu einer sich 0 annähernden Veränderung in w0 angibt, ausdrückbar durch:
+Stellen wir uns vor, wir veränderten den Wert von w0 um einen kleinen Betrag, ca. dw0 (wobei dw0 von 0 kaum zu unterscheiden ist), sodass sich gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdx%7D%7Bdw_0%7D) der Funktionswert von x um etwa dx verändere, wobei dx von 0 ebenfalls kaum zu unterscheiden ist. Gemäß ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) würde sich dann der Funktionswert von L um etwa dL verändern. Daher ist der Quotient, der das Verhältnis zwischen der Veränderung von L zu einer sich 0 annähernden Veränderung in w0 angibt, ausdrückbar durch:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%7D%7Bdw_0%7D%3D%5Cfrac%7BdL%7D%7Bdx%7D%5Ccdot%20%5Cfrac%7Bdx%7D%7Bdw_0%7D)
 
