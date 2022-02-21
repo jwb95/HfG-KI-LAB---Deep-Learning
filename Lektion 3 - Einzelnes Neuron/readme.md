@@ -42,7 +42,7 @@ Wir sehen: Die Performance des Models lässt zu wünschen übrig und es gilt die
 
 ### Herleitung des Optimierungsalgorithmus
 
-Damit L sinkt, müsste x verändert werden. Um festzutellen, ob x erhöht oder verringert werden müsste, betrachten wir die Ableitung von L(x,y) in Abhängigkeit von x. Diese gibt die Steigung der Tangente an, die für ein fixes y den Graphen von L(x,y) am Punkt (x, L(x,y)) berührt. Wir erinnern uns, dass diese auch als Quotient ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) schreibbar ist.
+Damit L sinkt, müsste x verändert werden. Wir erinnern uns, dass wir gemäß Gradient Descent von x einen ausreichenden kleinen Teil der Ableitung von L(x,y) in Abhängigkeit von x abziehen müssten, damit sich x so verändert, dass L sinkt. Diese Ableitung gibt die Steigung der Tangente an, die für ein fixes y den Graphen von L(x,y) am Punkt (x, L(x,y)) berührt. Wir erinnern uns, dass sie auch als Quotient ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) schreibbar ist.
 
 Nun ist x keine 'trainierbare' Variable, die wir direkt verändern können sondern hängt selbst wiederum von w0, w1 und den Inputs (x0, x1) ab.
 x ist eine Funktion von w0, x0, w1 und x1:
