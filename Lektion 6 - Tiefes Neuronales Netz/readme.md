@@ -9,14 +9,12 @@ Verfügte das Neuron aus Lektion 3/4 über einen Bias b, so wäre die Funktion x
 Im ![Desmos-Graphen](https://www.desmos.com/calculator/4tezk4zgny) findet sich eine Erklärung dafür, warum ein Bias die Funktionalität unseres Neurons erweitern wird. Die Beobachtung generalisiert, sodass es wahr ist, dass auch ein Netz mit vielen Neuronen und möglicherweise Layers nicht jede lineare Funktion annehmen kann. Dann kann es schon gar kein 'Universal Function Approximator' sein.
 
 Bemerke: Der Vorgang bei dem eine Input-Variable zuerst mit einem Gewicht multipliziert und dann mit einem Bias addiert wird ist nichts anderes als eine Lineare Funktion. Die Summe von beliebig vielen Linearen Funktionen ergibt immer eine Lineare Funktion und beliebig viele verschachtelte Lineare Funktionen
-f(g(...(h(x))) ergeben immer eine Lineare Funktion. Daher besteht die letzte Zutat für Neuronale Netze aus sog. Non-Linearities. Das sind Funktionen, die einen nicht-linearen Graph besitzen. Wir kennen z.b schon f(x)=x^2. Üblicherweise werden Non-Linearities auf den Output eines Neurons angewandt. Etwa so: Es sei ϕ eine beliebige nicht-lineare Funktion, dann können wir unser Neuron aus Lektion 3/4 erweitern, sodass: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28x_0%2Cw_0%2Cx_1%2Cw_1%2Cb%29%20%3D%20%5Cphi%20%28x_0w_0&plus;x_1w_1&plus;b%29)
-
+f(g(...(h(x))) ergeben immer eine Lineare Funktion. Jede existierende Lineare Funktion ist durch 2 Zahlen ausdrückbar, das ist nicht sonderlich kompliziert.
 Funktionen, die etwas interessantes tun sollen, sind kompliziert. So kompliziert, dass wir sie nicht selbst bauen wollen, sondern auf die Idee kommen, sie von einem Neuronalen Netz lernen zu lassen. Solche Funktionen sind nicht linear, daher ist es notwendig, dass Non-Linearities im Netwerk verbaut sind.
+Die letzte Zutat für unser Neuron besteht also aus einer sog. Non-Linearity. Das ist eine Funktion, die einen nicht-linearen Graph besitzt. Wir kennen z.b schon f(x)=x^2. Üblicherweise werden Non-Linearities auf den Output eines Neurons angewandt. Etwa so: Es sei ϕ eine beliebige nicht-lineare Funktion, dann können wir unser Neuron aus Lektion 3/4 erweitern, sodass: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28x_0%2Cw_0%2Cx_1%2Cw_1%2Cb%29%20%3D%20%5Cphi%20%28x_0w_0&plus;x_1w_1&plus;b%29)
 
-
-2.) Nach der Berechnung der Summe eines Neurons folgt in der Regel eine differenzierbare 'Non-linearity'. Also eine Funktion, die ableitbar und nicht linear ist. Wir kennen beispielsweise schon f(x)=x^2
-
-Übliche Non-linearities in tiefen neuronalen Netzen sind ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) oder ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)).
+Siehe im ![Desmos-Graphen](https://www.desmos.com/calculator/te67ekhyid), welche Funktionalität eine Non-Linearity unserem Neuron hinzufügt.
+Wichtig ist, dass diese Non-Linearity ableitbar ist, damit alle Ableitungen der Lossfunction in Abhängigkeit zu jeweils jeder trainierbaren Variable berechnet werden können. Zu den häufigsten Non-Linearities gehören ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) und ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). Dennoch ist prinzipiell jede ableitbare Non-Linearity denkbar denn jede kontinuierliche Funktion ist als Summe von kontinuierlichen nicht-linearen Funktionen ausdrückbar. (Man denke an die Fourier-Transformation).
 
 If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input, which is not enough to form a universal function approximator
 
