@@ -1,5 +1,3 @@
-NumPy ist die fundamentale library für wissenschaftliches Rechnen in Python.
+NumPy ist die fundamentale Library für wissenschaftliches Rechnen in Python auf dessen Funktionalitäten alle wichtigen Deep Learning-Libraries (Tensorflow/Keras, Pytorch, Jax) basieren.
 
-Alle wichtigen Deep Learning-libraries (Tensorflow/Keras, Pytorch, Jax) basieren auf NumPy.
-
-Bevor wir mit dem Bauen Neuronale Netze in Tensorflow beginnen, lernen wir also das Wichtigste über NumPy.
+Machen wir uns also mit ihnen vertraut bevor wir mit dem Bauen Neuronale Netze in Tensorflow beginnen.
