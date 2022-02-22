@@ -6,6 +6,21 @@ Das Netzwerk, das wir in dieser Lektion betrachteten, hatte zwischen dem Input-L
 
 Verfügte das Neuron unseres Netzes über einen Bias b, so wäre die Funktion x folgendermaßen definiert: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28x_0%2Cw_0%2Cx_1%2Cw_1%2Cb%29%20%3D%20x_0w_0&plus;x_1w_1&plus;b)
 
-2.) Nach der Berechnung der Summe eines Neurons folgt in der Regel eine Nicht-lineare 
+2.) Nach der Berechnung der Summe eines Neurons folgt in der Regel eine differenzierbare 'Non-linearity'. Also eine Funktion, die ableitbar und nicht linear ist. Wir kennen beispielsweise schon f(x)=x^2
+
+Übliche Non-linearities in tiefen neuronalen Netzen sind ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) oder ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)).
+
+If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input, which is not enough to form a universal function approximator
+
+
+A simpler way to understand what the bias is: it is somehow similar to the constant b of a linear function
+
+y = ax + b
+
+It allows you to move the line up and down to fit the prediction with the data better.
+
+Without b, the line always goes through the origin (0, 0) and you may get a poorer fit.
+
 
 ![](https://miro.medium.com/max/1400/1*KHs1Chs6TCJDTIIQVyIJxg.png)
+
