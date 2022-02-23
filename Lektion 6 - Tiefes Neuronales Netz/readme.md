@@ -1,4 +1,6 @@
-In dieser Lektion implementieren und trainieren wir ein Tiefes Neuronales Netz um ein Mutliclass-Classification-Problem zu lösen. Konkret trainieren wir das Model so, dass es in der Lage ist Bilder einer einzelnen handgeschriebenen Ziffer (0, 1, ... 9) der zugehörigen Ziffer zuzuordnen.
+In dieser Lektion implementieren und trainieren wir ein Tiefes Neuronales Netz um ein Mutliclass-Classification-Problem zu lösen. Konkret trainieren wir das Model auf dem MNIST-Datenset, sodass es nach dem Training in der Lage ist Bilder einer einzelnen handgeschriebenen Ziffer (0, 1, ... 9) der zugehörigen Ziffer zuzuordnen.
+
+![](https://miro.medium.com/max/1400/1*LyRlX__08q40UJohhJG9Ow.png)
 
 Das Neuron, das wir in Lektion 3 und 4 betrachteten, bestand nur aus dem Input- und dem Output-Layer. Tiefe Neuronale Netze haben dagegen (hidden) Layers dazwischen, welche möglicherweise mehr als die Anzahl der Netz-Inputs an Neuronen beinhalten.
 
