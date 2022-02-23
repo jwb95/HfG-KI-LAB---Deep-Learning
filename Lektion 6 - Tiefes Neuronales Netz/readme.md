@@ -1,3 +1,5 @@
+In dieser Lektion implementieren und trainieren wir ein Tiefes Neuronales Netz um ein Mutliclass-Classification-Problem zu lösen. Konkret trainieren wir das Model so, dass es in der Lage ist Bilder einer einzelnen handgeschriebenen Ziffer (0, 1, ... 9) der zugehörigen Ziffer zuzuordnen.
+
 Das Neuron, das wir in Lektion 3 und 4 betrachteten, bestand nur aus dem Input- und dem Output-Layer. Tiefe Neuronale Netze haben dagegen (hidden) Layers dazwischen, welche möglicherweise mehr als die Anzahl der Netz-Inputs an Neuronen beinhalten.
 
 ![](https://miro.medium.com/max/1400/1*KHs1Chs6TCJDTIIQVyIJxg.png)
@@ -17,8 +19,3 @@ Die letzte Zutat für unser Neuron besteht also aus einer sog. Non-Linearity. Da
 
 Siehe im Desmos-Graphen (https://www.desmos.com/calculator/icdrdyrpq4), welche Funktionalität eine Non-Linearity unserem Neuron hinzufügt.
 Wichtig ist, dass diese Non-Linearity ableitbar ist, damit alle Ableitungen der Lossfunction in Abhängigkeit zu jeweils jeder trainierbaren Variable berechnet werden können. Zu den häufigsten Non-Linearities gehören ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) und ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). Dennoch ist prinzipiell jede ableitbare Non-Linearity denkbar, denn jede kontinuierliche Funktion für eine begrentze Range ist als Summe von kontinuierlichen nicht-linearen Funktionen ausdrückbar. In ![diesem Artikel](https://towardsdatascience.com/can-neural-networks-really-learn-any-function-65e106617fc6) baut der Autor, um sich den Verhalt zu veranschaulichen, ein Polynom aus einer Summe von nicht-linearen Funktionen.
-
-
-
-
-
