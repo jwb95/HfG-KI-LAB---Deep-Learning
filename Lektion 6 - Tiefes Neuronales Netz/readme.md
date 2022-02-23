@@ -1,6 +1,8 @@
-Das Neuron, das wir in Lektion 3 und 4 betrachteten, bestand nur aus dem Input- und dem Output-Layer. Neuronale Netze, die sehr komplexe Probleme lösen sollen, haben dagegen viele (hidden) Layers dazwischen, welche möglicherweise mehr als die Anzahl der Netz-Inputs an Neuronen beinhalten.
+Das Neuron, das wir in Lektion 3 und 4 betrachteten, bestand nur aus dem Input- und dem Output-Layer. Tiefe Neuronale Netze haben dagegen (hidden) Layers dazwischen, welche möglicherweise mehr als die Anzahl der Netz-Inputs an Neuronen beinhalten.
 
-Neuronale Netze sind sog. 'Universal Function Approximators'. Ihre Funktionalität besteht darin, dass, wenn wir sie zur Lösung eines spezfischen Problems erfolgreich optimieren können, sie als eine mathematische Funktion fungieren, die dieses Problem löst - bspw. Input-Daten auf die richtigen Labels zu mappen. 'Universal' ist nicht weit hergeholt. Ein Neuronales Netz mit nur einem Fully-Connected-Layer zwischen Input- und Outputlayer kann theoretisch jede kontinuierliche Funktion annehmen, insofern genügend Neuronen im Layer vorhanden sind. (Aber auch wirklich nur in der Theorie.) Außerdem müssen die Neuronen zwei weitere Eigenschaften besitzen:
+![](https://miro.medium.com/max/1400/1*KHs1Chs6TCJDTIIQVyIJxg.png)
+
+Die Funktionalität NNs besteht darin, dass, wenn wir sie zur Lösung eines spezfischen Problems erfolgreich optimieren können, sie als eine mathematische Funktion fungieren, die dieses Problem löst - bspw. Input-Daten auf die richtigen Labels zu mappen. Das Universal Approximation Theorem besagt, dass ein NN mit nur einem Fully-Connected-Layer zwischen Input- und Outputlayer theoretisch jede kontinuierliche Funktion, die Inputs einer begrenzten Range nimmt, annehmen kann, insofern genügend Neuronen im Layer vorhanden sind. Außerdem müssen die Neuronen dafür zwei weitere Eigenschaften besitzen:
 
 1.) Ein 'Neuron' verfügt üblicherweise über einen 'Bias'. Das ist eine weitere trainierbare Variable, welche die Summe, die ein Neuron produziert, um eine Konstante erweitert.
 
@@ -10,23 +12,13 @@ Im ![Desmos-Graphen](https://www.desmos.com/calculator/4tezk4zgny) findet sich e
 
 Bemerke: Der Vorgang bei dem eine Input-Variable zuerst mit einem Gewicht multipliziert und dann mit einem Bias addiert wird ist nichts anderes als eine Lineare Funktion. Die Summe von beliebig vielen Linearen Funktionen ergibt immer eine Lineare Funktion und beliebig viele verschachtelte Lineare Funktionen
 f(g(...(h(x))) ergeben immer eine Lineare Funktion. Jede existierende Lineare Funktion ist durch 2 Zahlen ausdrückbar, das ist nicht sonderlich kompliziert.
-Funktionen, die etwas interessantes tun sollen, sind kompliziert. So kompliziert, dass wir sie nicht selbst bauen wollen, sondern auf die Idee kommen, sie von einem Neuronalen Netz lernen zu lassen. Solche Funktionen sind nicht linear, daher ist es notwendig, dass Non-Linearities im Netwerk verbaut sind.
+Funktionen, die etwas interessantes tun sollen, sind kompliziert. So kompliziert, dass wir sie nicht selbst bauen wollen, sondern auf die Idee kommen, sie von einem NN lernen zu lassen. Solche Funktionen sind nicht linear, daher ist es notwendig, dass Non-Linearities im Netwerk verbaut sind.
 Die letzte Zutat für unser Neuron besteht also aus einer sog. Non-Linearity. Das ist eine Funktion, die einen nicht-linearen Graph besitzt. Wir kennen z.b schon f(x)=x^2. Üblicherweise werden Non-Linearities auf den Output eines Neurons angewandt. Etwa so: Es sei ϕ eine beliebige nicht-lineare Funktion, dann können wir unser Neuron aus Lektion 3/4 erweitern, sodass: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20x%28x_0%2Cw_0%2Cx_1%2Cw_1%2Cb%29%20%3D%20%5Cphi%20%28x_0w_0&plus;x_1w_1&plus;b%29)
 
 Siehe im ![Desmos-Graphen](https://www.desmos.com/calculator/te67ekhyid), welche Funktionalität eine Non-Linearity unserem Neuron hinzufügt.
-Wichtig ist, dass diese Non-Linearity ableitbar ist, damit alle Ableitungen der Lossfunction in Abhängigkeit zu jeweils jeder trainierbaren Variable berechnet werden können. Zu den häufigsten Non-Linearities gehören ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) und ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). Dennoch ist prinzipiell jede ableitbare Non-Linearity denkbar denn jede kontinuierliche Funktion ist als Summe von kontinuierlichen nicht-linearen Funktionen ausdrückbar. (Man denke an die Fourier-Transformation).
-
-If we only allow linear activation functions in a neural network, the output will just be a linear transformation of the input, which is not enough to form a universal function approximator
+Wichtig ist, dass diese Non-Linearity ableitbar ist, damit alle Ableitungen der Lossfunction in Abhängigkeit zu jeweils jeder trainierbaren Variable berechnet werden können. Zu den häufigsten Non-Linearities gehören ![Sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) und ![ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). Dennoch ist prinzipiell jede ableitbare Non-Linearity denkbar, denn jede kontinuierliche Funktion für eine begrentze Range ist als Summe von kontinuierlichen nicht-linearen Funktionen ausdrückbar. In ![diesem Artikel](https://towardsdatascience.com/can-neural-networks-really-learn-any-function-65e106617fc6) baut der Autor, um den Verhalt zu veranschaulichen ein Polynom aus einer Summe von nicht-linearen Funktionen.
 
 
-A simpler way to understand what the bias is: it is somehow similar to the constant b of a linear function
-
-y = ax + b
-
-It allows you to move the line up and down to fit the prediction with the data better.
-
-Without b, the line always goes through the origin (0, 0) and you may get a poorer fit.
 
 
-![](https://miro.medium.com/max/1400/1*KHs1Chs6TCJDTIIQVyIJxg.png)
 
