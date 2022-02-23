@@ -8,22 +8,41 @@ stammen könnten. Die einzige 'Conditioning' für den Algorithmus besteht aus de
 Wir haben StyleGAN2 (https://github.com/NVlabs/stylegan2) bereits kennengelernt. Mittlerweile gibt es auch schon StyleGAN3 (https://github.com/NVlabs/stylegan3).
 StyleGANs gehören zur Model-Klasse der Generative Adversarial Networks.
 
-Alternativen zu dieser Klasse sind VAEs (= Variational Autoencoders) wie NVAE (https://github.com/NVlabs/NVAE).
+![](https://github.com/NVlabs/stylegan3/raw/main/docs/stylegan3-teaser-1920x1006.png)
+
+
+Alternativen zu dieser Klasse sind VAEs (= Variational Autoencoders) wie NVAE (https://github.com/NVlabs/NVAE). 
 VAEs tendieren dazu, Bilder schlechterer Qualität als GANs, jedoch dafür vielseitigere zu generieren.
 
-Und Diffusion-Models: https://github.com/hojonathanho/diffusion
+![](https://github.com/NVlabs/NVAE/raw/master/img/celebahq.png)
+
+
+Und Diffusion-Models: https://github.com/hojonathanho/diffusion, die in Versatilität wie Qualität gut sind, aber langsam sind.
+
+![](https://github.com/hojonathanho/diffusion/raw/master/resources/samples.png)
+
 
 Conditional Image-Synthesis:
 Conditional bedeutet, dass das generative Model mit Daten aus mehreren Klassen derartig trainiert wurde, sodass wir bei der Synthese dem Model einen Code übergeben können, der dem Model bedeutet aus welcher Klasse ein Bild generiert werden soll. Wie wir im StyleGAN2-Tutorial gesehen haben gibt es Conditional-StyleGAN2-Models (Wikiart).
 Diffusion Models sind momentan SotA: https://cascaded-diffusion.github.io/
 
+![](https://cascaded-diffusion.github.io/assets/img/header_small.png)
+
 
 Paired Domain-Translation:
 Das erste Model für paired-image-2-image war Pix2Pix: https://github.com/affinelayer/pix2pix-tensorflow
+
+![](https://github.com/affinelayer/pix2pix-tensorflow/raw/master/docs/examples.jpg)
+
 Für das Training braucht man ein Datenset mit Paaren von Bildern, z.B. Paaren aus jeweils einem Photo von einer Handtasche und einer primitiven Zeichnung dieser. Dann soll das Model die gezeichnete auf die photo-realistische Version der Handtasche mappen. Bei paired-domain-translation geht es also um die Umwandlung der Repräsentationsform bzw. Domain der selben Sache. Es gibt auch Pix2PixHD, welches größer ist und bessere Ergebnisse erzielt: https://github.com/NVIDIA/pix2pixHD
 Da Video nur Listen von Bildern sind lassen sich Pix2Pix-artige Models auch auf Videos anwenden: https://github.com/NVIDIA/vid2vid
 
-Ein klassischer Fall von paired-image-2-image ist auch Super-Resolution, also die Erhöhung der Pixelauflösung von Bildern, wofür es GAN- (https://github.com/xinntao/ESRGAN) wie auch Diffusion-basierte Models (https://iterative-refinement.github.io/) gibt.
+![](https://github.com/NVIDIA/vid2vid/raw/master/imgs/teaser.gif)
+
+
+Ein klassischer Fall von paired-image-2-image ist Super-Resolution, also die Erhöhung der Pixelauflösung von Bildern, wofür es GAN- (https://github.com/xinntao/ESRGAN) wie auch Diffusion-basierte Models (https://iterative-refinement.github.io/) gibt.
+
+![](https://iterative-refinement.github.io/images/super_res_movie.m4v)
 
 Unter paired-domain-translation fällt auch semantische Image-Synthese. Also die Synthese von Daten auf Basis von semantischen Karten, die der User erstellt, um zu festzulegen, wo gewisser Inhalt im Bild sichtbar sein soll.  https://github.com/NVlabs/SPADE
 Auf ganpaint.io kann man ein trainiertes Model dieser Art in Aktion erleben: https://ganpaint.io/
@@ -31,6 +50,7 @@ Auf ganpaint.io kann man ein trainiertes Model dieser Art in Aktion erleben: htt
 Für Domain-Translation ist es übrigens auch denkbar mit Domains zweier verschiedenere Datentype zu arbeiten: Z.B. Text2Image. https://github.com/crowsonkb/v-diffusion-pytorch
 Das Model braucht sehr lange um ein Image zu generieren. Maximilian Kreis hat das Model mit der Textzeile "shadow of the colossus" getestet.
 
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20All%20SotA/media/shadowofthecolossus.png)
 
 Unpaired Domain-Translation:
 ... bezeichnet das gleiche Problem, nur mit dem Unterschied, dass die Trainingsbeispiele nicht in Paarform vorliegen. Solche Problem sind "ill-posed", da für sie keine einzigartige Lösung existiert. Nehmen wir z.B. das Problem, dass wir Bilder von Pferden in Bilder von Zebras verwandeln wollten, dann könnten wir einem Pferde-Bild theoretisch jedes erdenkliche Zebra-Bild zuordnen. Da sich Zebras und Pferde in ihrer Form recht stark ähneln wäre es jedoch interessant zu erproben, ob man aus dem Bild eines Pferdes das Bild eines Zebras in gleicher Pose generieren könnte. CycleGAN (https://junyanz.github.io/CycleGAN/) war das Pioneer-Paper auf diesem Feld.
