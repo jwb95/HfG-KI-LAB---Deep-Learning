@@ -42,7 +42,7 @@ Da Video nur Listen von Bildern sind lassen sich Pix2Pix-artige Models auch auf 
 
 Ein klassischer Fall von paired-image-2-image ist Super-Resolution, also die Erhöhung der Pixelauflösung von Bildern, wofür es GAN- (https://github.com/xinntao/ESRGAN) wie auch Diffusion-basierte Models (https://iterative-refinement.github.io/) gibt.
 
-![](https://iterative-refinement.github.io/images/super_res_movie.m4v)
+![](https://iterative-refinement.github.io/images/cascade_fig.svg)
 
 Unter paired-domain-translation fällt auch semantische Image-Synthese. Also die Synthese von Daten auf Basis von semantischen Karten, die der User erstellt, um zu festzulegen, wo gewisser Inhalt im Bild sichtbar sein soll.  https://github.com/NVlabs/SPADE
 Auf ganpaint.io kann man ein trainiertes Model dieser Art in Aktion erleben: https://ganpaint.io/
