@@ -1,7 +1,7 @@
 Diese Lektion liefert lediglich Anhaltspunkte in Form von Deep Learning-Papers und Projekten, die herausragende Ergebnisse gezeigt haben.
 Es gibt einen der Forschung inhärenten Bias in Richtung Bildanwendungen. Das liegt daran, dass Bilddatensets relativ leicht sammelbar sind bzw. schon einige brauchbare existieren und Resultate ganz wörtlich anschaubar und damit verhätlnismäßig leicht zu evaluieren sind. Grundsätzlich ist das Arbeiten mit Daten jeder Art absolut möglich. Man darf  annehmen, dass Algorithmen, die auf Bildern gute Ergebnisse erzielen grundsätzlich auch auf andere Datentypen anwendbar sein müssten oder mindestens Fortschritte im Feld der Bild-Synthese auch Fortschritte für die Synthese anderer Datentypen (Text, Video, Roboter-Aktionen, Audio, 3D-Modelle etc. pp.) bedeuten müssten.
 
-## Unconditional Image-Synthesis
+##### Unconditional Image-Synthesis
 
 'Uncoditional' bedeutet, dass wir einen generativen Algorithmus mit einem Datenset einer Klasse trainieren und das Model neue Daten generiert, die aus diesem Datenset
 stammen könnten. Die einzige 'Conditioning' für den Algorithmus besteht aus dem Datenset.
@@ -23,7 +23,7 @@ Und Diffusion-Models: https://github.com/hojonathanho/diffusion, die in Versatil
 ![](https://github.com/hojonathanho/diffusion/raw/master/resources/samples.png)
 
 
-## Conditional Image-Synthesis
+##### Conditional Image-Synthesis
 
 Conditional bedeutet, dass das generative Model mit Daten aus mehreren Klassen derartig trainiert wurde, sodass wir bei der Synthese dem Model einen Code übergeben können, der dem Model bedeutet aus welcher Klasse ein Bild generiert werden soll. Wie wir im StyleGAN2-Tutorial gesehen haben gibt es Conditional-StyleGAN2-Models (Wikiart).
 Diffusion Models sind momentan SotA: https://cascaded-diffusion.github.io/
@@ -31,7 +31,7 @@ Diffusion Models sind momentan SotA: https://cascaded-diffusion.github.io/
 ![](https://cascaded-diffusion.github.io/assets/img/header_small.png)
 
 
-## Paired Domain-Translation
+##### Paired Domain-Translation
 
 Das erste Model für paired-image-2-image war Pix2Pix: https://github.com/affinelayer/pix2pix-tensorflow
 
@@ -58,7 +58,7 @@ Das Model braucht sehr lange um ein Image zu generieren. Maximilian Kreis hat da
 
 ![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20All%20SotA/media/shadowofthecolossus.png)
 
-## Unpaired Domain-Translation
+##### Unpaired Domain-Translation
 
 ... bezeichnet das gleiche Problem, nur mit dem Unterschied, dass die Trainingsbeispiele nicht in Paarform vorliegen. Solche Problem sind "ill-posed", da für sie keine einzigartige Lösung existiert. Nehmen wir z.B. das Problem, dass wir Bilder von Pferden in Bilder von Zebras verwandeln wollten, dann könnten wir einem Pferde-Bild theoretisch jedes erdenkliche Zebra-Bild zuordnen. Da sich Zebras und Pferde in ihrer Form recht stark ähneln wäre es jedoch interessant zu erproben, ob man aus dem Bild eines Pferdes das Bild eines Zebras in gleicher Pose generieren könnte. CycleGAN (https://junyanz.github.io/CycleGAN/) war das Pioneer-Paper auf diesem Feld.
 
