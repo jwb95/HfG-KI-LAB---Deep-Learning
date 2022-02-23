@@ -40,7 +40,7 @@ Da Video nur Listen von Bildern sind lassen sich Pix2Pix-artige Models auch auf 
 ![](https://github.com/NVIDIA/vid2vid/raw/master/imgs/teaser.gif)
 
 
-Ein klassischer Fall von paired-image-2-image ist Super-Resolution, also die Erhöhung der Pixelauflösung von Bildern, wofür es GAN- (https://github.com/xinntao/ESRGAN) wie auch Diffusion-basierte Models (https://iterative-refinement.github.io/) gibt.
+Ein klassischer Fall von paired-image-2-image ist Super-Resolution, also die Erhöhung der Pixelauflösung von Bildern, wofür es GAN- (https://github.com/xinntao/ESRGAN) wie auch Diffusion-basierte Models (https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement) gibt.
 
 ![](https://iterative-refinement.github.io/images/cascade_fig.svg)
 
