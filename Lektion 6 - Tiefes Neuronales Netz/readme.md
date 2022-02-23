@@ -1,4 +1,4 @@
-In dieser Lektion implementieren und trainieren wir ein Tiefes Neuronales Netz um ein Mutliclass-Classification-Problem zu lösen. Konkret trainieren wir das Model auf dem MNIST-Datenset, sodass es nach dem Training in der Lage ist Bilder einer einzelnen handgeschriebenen Ziffer (0, 1, ... 9) der zugehörigen Ziffer zuzuordnen.
+In dieser Lektion implementieren und trainieren wir ein Tiefes Neuronales Netz um ein Mutliclass-Classification-Problem zu lösen. Konkret trainieren wir das Model auf dem MNIST-Datenset, sodass es nach dem Training in der Lage ist Bilder jeweils einer handgeschriebenen Ziffer (0, 1, ... 9) den jeweils zugehörigen Ziffern zuzuordnen.
 
 ![](https://miro.medium.com/max/1400/1*LyRlX__08q40UJohhJG9Ow.png)
 
