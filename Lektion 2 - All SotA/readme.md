@@ -71,4 +71,4 @@ Mittlerweile gibt es GAN-basierte Models, die weitaus bessere Ergebnisse erziele
 ![](https://github.com/NVlabs/FUNIT/raw/master/docs/images/animal.gif)
 
 Tatsächlich waren das jetzt alles Image-Projekte. Die Auflistung hatte aber den Zweck aufzulisten was im Bereich des 'generative Modelling' grundsätzlich denkbar ist.
-Existieren Daten und eine Architektur, die die Daten verarbeiten kann, ist jeder andere Datentyp genauso denkbar.
+Existieren Daten und eine Architektur, die die Daten verarbeiten kann, ist jeder andere Datentyp genauso denkbar. Nach allen Lektionen werden wir eine Intuition dafür besitzen, wie diese Models prinzipiell funktionieren und werden in die Lage versetzt sein, dieses Wissen auf eigenen Probleme und Daten anzuwenden.
