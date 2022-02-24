@@ -11,13 +11,18 @@ Um die Seitendimensionen nicht zu verändern ist es üblich die Seiten mit Nulle
 
 ![](https://miro.medium.com/max/1838/1*GE2sny83f_u_o0jf6_wNRQ.png)
 
-Warum sind die Dinger so powerful?
-Betrachte diese Matrix ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%201%20%26%200%20%26%200%5C%5C%201%20%26%201%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%26%201%5C%5C%200%20%26%200%20%26%201%20%26%201%20%5Cend%7Bbmatrix%7D)
+Wozu Convolutions?
 
-Um eine Repräsentation davon zu lernen, welche Image-Patches equivalent mit Matrix ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%201%20%5Cend%7Bbmatrix%7D) sind, ist lediglich ein einzelner 2x2-Filter mit dieser Matrix notwendig. Der würde folgenden Output produzieren: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%202%20%26%201%5C%5C%201%20%26%202%20%5Cend%7Bbmatrix%7D)
-Von diesem könnte dann ein Bias von 1 abgezogen und das Ergbenis durch eine ReLU geschickt werden. Dann erhielten wir: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%201%20%5Cend%7Bbmatrix%7D).
+Betrachte diese Matrix:
 
-Ein FC-Layer kann nicht eine derartig sparsame Extraktion von Information vollziehen. Convolutions nehmen an, dass das selbe 'Feauture', z.B. eine Matrix wie 
-![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%201%20%5Cend%7Bbmatrix%7D) wiederholt in den Daten vorkommen, was für natürliche Bild- und Audiodaten bzw. im Grunde alle Daten, die sich in Frequenzen unterteilen lassen, zutrifft.
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%26%200%5C%5C%200%20%26%200%20%26%200%20%26%200%5Cend%7Bbmatrix%7D)
 
+Um eine Repräsentation davon zu lernen, welche Image-Patches equivalent mit Matrix 
 
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%200%20%5Cend%7Bbmatrix%7D)
+
+sind, ist lediglich ein einzelner 2x2-Filter mit eben dieser Matrix notwendig. Der würde folgenden Output produzieren:
+
+![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D)
+
+Ein FC-Layer kann nicht eine derartig sparsame Extraktion von Information vollziehen. Convolutions nutzen den Umstand aus, dass das selbe 'Feauture', z.B. eine Matrix wie ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B50%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D) wiederholt in den Daten vorkommen kann, was für natürliche Bild- und Audiodaten bzw. im Grunde alle Daten, die sich in Frequenzen unterteilen lassen, die Regel ist.
