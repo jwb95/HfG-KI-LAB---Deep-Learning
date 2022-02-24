@@ -7,8 +7,8 @@ Da wir 64 Filter festgelegt haben, werden also 64 Summen für jeden 3x3-Bild-Aus
 
 ![](https://1.cms.s81c.com/sites/default/files/2021-01-06/ICLH_Diagram_Batch_02_17A-ConvolutionalNeuralNetworks-WHITEBG.png)
 
-Um die Seitendimensionen nicht zu verändern ist es üblich die Seiten mit Nullen aufzufüllen. Ein 2x2-Filter, der über eine 4x4x1-Matrix läuft, würde eine Matrix der Form 3x3x1 produzieren. Wir könnten folgendermaßen 0-en hinzufügens, sodass aus der 4x4x1-Matrix eine 5x5x1-Matrix wird und ein 2x2-Filter entsprechend eine 4x4x1 MAtrix produziert. Das nennt man (Zero-)Padding.
+Um die Seitendimensionen nicht zu verändern ist es üblich die Seiten mit Nullen aufzufüllen. Ein 3x3-Filter, der über eine 5x5x1-Matrix läuft, würde eine Matrix der Form 3x3x1 produzieren. Wir könnten folgendermaßen 0-en hinzufügen, sodass aus der 5x5x1-Matrix eine 7x7x1-Matrix wird und ein 3x3-Filter entsprechend eine 5x5x1 Matrix produziert. Das nennt man (Zero-)Padding.
 
-![](https://classic.d2l.ai/_images/conv-pad.svg)
+![](https://miro.medium.com/max/1838/1*GE2sny83f_u_o0jf6_wNRQ.png)
 
 
