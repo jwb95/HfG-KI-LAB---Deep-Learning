@@ -1,5 +1,5 @@
 In dieser Lektion lernen wir ein neues Layer, das eine Alternative zum Fully-Connected-Layer darstellt, kennen: das Convolutional Layer.
-Es bildet die Basis für alle SotA-Models im Image-Bereich. Im Notebook implementieren wir ein Conv-Net für Binary-Image-Classification (Hund oder Katze?).
+Es bildet die Basis für alle SotA-Models generativer Image- und Audio-Models. Im Notebook implementieren wir ein Conv-Net für Binary-Image-Classification (Hund oder Katze?).
 
 Während ein FC-Layer bei der Erstellung neben der Art der Weight-Initialisierung nur die Anzahl der Neuronen im Layer benötigt, übergeben wir dem Convolutional Layer die Anzahl der 'Filter' und eine Kernel-Größe. Stellen wir uns ein Convolutional Layer mit 64 Filtern und einem 2-dimensionalen Kernel der Größe 3x3 vor. Dann besitzt das Convolutonal Layer über 64 3x3 Matrizen bzw. Filter wobei jeder Eintrag einer Matrix ein Gewicht ist. Der Input zu diesem Layer sei ein schwarz-weiß-Bild der Form 32x32x1. Dann läuft jede der jeweils 64 Matrizen von links nach rechts und von oben nach unten über die Matrix des Bildes und produziert für jeden pixelweisen Schritt
 einen Scalar, der die Summe der punktweisen Multiplikation der Filter-Matrix mit dem jeweiligen Bild-Ausschnitts ist. Üblicherweise wird auf diese Summe noch ein Bias addiert.
