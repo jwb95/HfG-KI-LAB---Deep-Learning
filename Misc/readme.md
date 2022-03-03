@@ -6,9 +6,12 @@ Um eine Conda Environment zu erstellen, die identisch zu den Python-/Tensorflow-
 ```
 cd Desktop
 ```
-4. Dann folgende Line:
+Der Default-Name der Environement ist 'tf2'. Um diese zu ändern kann man die erste Line der 'colab_env.yml' anpassen.
+
+4. Dann um die Environment zu erstellen:
 ```
 conda env create -f colab_env.yml
 ```
+
 
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
