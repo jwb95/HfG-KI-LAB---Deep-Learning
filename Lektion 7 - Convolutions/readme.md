@@ -26,3 +26,7 @@ sind, ist lediglich ein einzelner 2x2-Filter mit eben dieser Matrix notwendig. D
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D)
 
 Ein FC-Layer kann nicht eine derartig sparsame Extraktion von Information vollziehen. Convolutions nutzen den Umstand aus, dass das selbe 'Feauture', z.B. eine Matrix wie ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%200%20%5Cend%7Bbmatrix%7D) wiederholt in den Daten vorkommen kann, was für natürliche Bild- und Audiodaten bzw. im Grunde alle Daten, die sich in Frequenzen unterteilen lassen, die Regel ist.
+
+### Conv-Nets
+
+Pooling und Strides
