@@ -63,4 +63,4 @@ dependencies:
     - werkzeug==2.0.3
     - wrapt==1.13.3
     - zipp==3.7.0
-prefix: C:\Users\username\anaconda3\envs\tf2
+prefix: C:\Users\username\anaconda3\envs\colab_tf2
