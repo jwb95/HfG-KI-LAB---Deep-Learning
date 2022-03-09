@@ -13,7 +13,7 @@ Um die Seitendimensionen nicht zu verändern ist es üblich die Seiten mit Nulle
 
 Wozu Convolutions?
 
-Betrachte diese Matrix:
+Betrachte diese Matrix der Form 4x4x1.
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%26%200%5C%5C%200%20%26%200%20%26%200%20%26%200%5Cend%7Bbmatrix%7D)
 
@@ -21,12 +21,30 @@ Um eine Repräsentation davon zu lernen, welche Image-Patches equivalent mit Mat
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%200%20%5Cend%7Bbmatrix%7D)
 
-sind, ist lediglich ein einzelner 2x2-Filter mit eben dieser Matrix notwendig. Der würde folgenden Output produzieren:
+sind, ist lediglich ein einzelner 2x2x1-Filter mit eben dieser Matrix notwendig. Der würde folgenden Output produzieren:
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%200%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D)
 
 Ein FC-Layer kann nicht eine derartig sparsame Extraktion von Information vollziehen. Convolutions nutzen den Umstand aus, dass das selbe 'Feauture', z.B. eine Matrix wie ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%200%5C%5C%200%20%26%200%20%5Cend%7Bbmatrix%7D) wiederholt in den Daten vorkommen kann, was für natürliche Bild- und Audiodaten bzw. im Grunde alle Daten, die sich in Frequenzen unterteilen lassen, die Regel ist.
 
+Bemerke: eine 2-dimensionale Convolution (also eine solche, bei der die Filter von links nach rechts und von oben nach unten wandern) hat eine 3-dimensionalen Filtergröße. Wenn wir beispielsweise eine Convolution über ein RGB-Bild vollziehen wollen, so benötigen wir einen Filter der Form (x, y, 3). Denn wie bereits erwähnt ist das Ergbenis des Filters über einem Bild-Ausschnitt die Summe der punktweisen Multiplikationen. Haben wir einen Bildausschnitt der Größe (7, 7, 3), so brauchen wir per Definition auch eine Filter-Matrix mit dieser Form. Die Anzahl der Filter, die wir in einem Layer verwenden wollen, wird jedoch vom User spezifiziert. D.h. definieren wir bspw. auf einem Input der Form (x, y, 20) eine Convolution mit 100 Filtern mit jeweils Filtergröße 3x3, so erhalten wir 100 Matrizen der Form (3, 3, 20) oder auch eine 4-dimensionale Matrix der Form (100, 3, 3, 20). ;)
+Da wir nun wissen, dass die Convolutions, die sich für Bilder eignen, 2-dimensionale Convolutions genannt werden, können wir uns denken, dass es auch 1-dimensionale, 3-dimensionale bishin zu theoretisch unendlich-dimensionalen Convolutions gibt.
+
 ### Conv-Nets
 
-Pooling und Strides
+Convolutional Neural Networks sind solche tiefen Neuronalen Netze, die anstelle von Fully-Connected Layers hauptsächlich Convolutional Layers verwenden.
+Üblicherweise werden diese wie im folgenden Schaubild konstruiert. Ignoriere hierbei vorerst die Indikation des Detection Layers, sondern betrachte die 3-dimensionalen CNN-Layers. Mit fortschreitenden Layers erhöht sich die Anzahl der Filter im jeweiligen Layer. Das erste Layer hat 192 Filter und das letzte 1024. Gleichzeitig schrumpfen die Seitendimensionen, die ursprünglich durch das Image definiert wurden (hier 448x488). Die von jedem großen Quader eingefassten kleinen Quader geben einen Hinweis auf die Filter-Größe jedes Layers. (7x7x3 für das erste Layer, anschließend 3x3x192 usw.).
+
+![](https://blogs.sas.com/content/subconsciousmusings/files/2018/11/YOLOnetworkarchitecture.png)
+
+Welchen Zweck hat das Vermindern der Seitendimensionen und warum tritt es auf?
+Folgende Beobachtungen sind wichtig:
+
+1.) Die Zeit, die ein Filter benötigt, um über ein quadratisches Bild zu wandern wächst quadratisch mit der Seitenlänge des Bildes.
+So benötigt eine Convolution über eine Matrix der Form (8, 8, f) 64 Zeiteinheiten, über eine Matrix der Form (16, 16, f) bereits 256 Zeiteinheiten.
+
+2.) In bspw. Klassifikationsproblemen ist die Anzahl der Variablen im Output-Layer weitaus geringer als die des Input-Layers. Für ein Problem, bei dem ein Neuronales Netz voraussagen soll, ob ein RGB-Bild mit Seitenlängen 64x64 einen Hund oder eine Katze abbildet, hat das Input-Layer 64*64*3 = 12288 Variablen, das Output-Layer benötigt jedoch (je nach Design) nur 1 oder 2 Variablen. Also muss die Anzahl der Variablen an irgendeiner oder mehreren Stellen im Neural Network verringert werden.
+Die Intuition hinter einer annähernd kontinuierlichen Verringerung der Dimensionalität der internen Repräsentation des Neuronalen Netzwerkes von Layer zu Layer ist wie folgt:
+Betrachten wir ein Neuronales Netz mit mehreren Convolutional Layers und Filtern der Größe 3x3x1, so kann das erste Layer nur Features lernen, die durch eine Matrix der Größe 3x3 abbildbar sind, also bspw. Linien, die sich über 3 Pixel erstrecken. Das folgende Layer kann mittels der durch Layer 1 produzierten Repräsentation bereits kompliziertere Features 'erkennen', die sich aus den kleineren 3x3-Matrizen zusammensetzen lassen. Mit dem Fortschreiten der Layer kann die jeweilige Repräsentation zunehmend kompliziertere Features abdecken, bis irgendwann ein solches Feature erkannt werden kann, welches beispielsweise eindeutig auf einen Elephanten schließen lässt. Siehe dazu das folgende Schaubild:
+
+![](https://upload.wikimedia.org/wikipedia/commons/2/26/Deep_Learning.jpg)
