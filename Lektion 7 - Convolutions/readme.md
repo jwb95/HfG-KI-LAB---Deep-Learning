@@ -42,6 +42,7 @@ Folgende Beobachtungen sind wichtig:
 
 1.) Die Zeit, die ein Filter benötigt, um über ein quadratisches Bild zu wandern wächst quadratisch mit der Seitenlänge des Bildes.
 So benötigt eine Convolution über eine Matrix der Form (8, 8, f) 64 Zeiteinheiten, über eine Matrix der Form (16, 16, f) bereits 256 Zeiteinheiten.
+Es stellt sich also eine Frage der Effizienz, denn das Training eines Conv-Nets ist unter umständen bereits langwierig.
 
 2.) In bspw. Klassifikationsproblemen ist die Anzahl der Variablen im Output-Layer weitaus geringer als die des Input-Layers. Für ein Problem, bei dem ein Neuronales Netz voraussagen soll, ob ein RGB-Bild mit Seitenlängen 64x64 einen Hund oder eine Katze abbildet, hat das Input-Layer 64*64*3 = 12288 Variablen, das Output-Layer benötigt jedoch (je nach Design) nur 1 oder 2 Variablen. Also muss die Anzahl der Variablen an irgendeiner oder mehreren Stellen im Neural Network verringert werden.
 Die Intuition hinter einer annähernd kontinuierlichen Verringerung der Dimensionalität der internen Repräsentation des Neuronalen Netzwerkes von Layer zu Layer ist wie folgt:
