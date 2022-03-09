@@ -1,4 +1,4 @@
-Diese Lektion liefert lediglich Anhaltspunkte in Form von Deep Learning-Papers und Projekten, die herausragende Ergebnisse gezeigt haben.
+Diese Lektion liefert lediglich Anhaltspunkte in Form von Deep Learning-Papers und Projekten, die im Bereich des generative modeling herausragende Ergebnisse gezeigt haben.
 Es gibt einen der Forschung inhärente Tendenz in Richtung Bildanwendungen. Das liegt daran, dass Bilddatensets relativ leicht sammelbar sind bzw. schon einige brauchbare existieren und Resultate ganz wörtlich anschaubar und damit verhätlnismäßig leicht zu evaluieren sind. Grundsätzlich ist das Arbeiten mit Daten jeder Art absolut möglich. Man darf  annehmen, dass Algorithmen, die auf Bildern gute Ergebnisse erzielen grundsätzlich auch auf andere Datentypen anwendbar sein müssten oder mindestens Fortschritte im Feld der Bild-Synthese auch Fortschritte für die Synthese anderer Datentypen (Text, Video, Roboter-Aktionen, Audio, 3D-Modelle etc. pp.) bedeuten müssten.
 
 #### Unconditional Image-Synthesis
