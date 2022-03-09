@@ -30,6 +30,11 @@ Diffusion Models sind momentan SotA: https://cascaded-diffusion.github.io/
 
 ![](https://cascaded-diffusion.github.io/assets/img/header_small.png)
 
+Image-Inpainting bzw. -Editing ist auch eine Form von conditional Image-Synthesis, da hier, wenn wir einen Auschnitt eines Ausgangsimages verändern wollen, die Bedingung impliziert wird, dass der generierte Bild-Ausschnitt sich sinnvoll in das Ausgangsbild einfügt. Das Projekt [Blended Diffusion for Text-driven Editing of Natural Images](https://github.com/omriav/blended-diffusion) nimmt außerdem als weiteren Input einen Text, der definieren soll, welche Image-Klasse in das Ausgangsimage eingefügt werden soll.
+
+![](https://github.com/omriav/blended-diffusion/blob/master/docs/different_prompts2.jpg?raw=true)
+
+
 
 #### Paired Domain-Translation
 
@@ -72,3 +77,9 @@ Mittlerweile gibt es GAN-basierte Models, die weitaus bessere Ergebnisse erziele
 
 Tatsächlich waren das jetzt alles Image-Projekte. Die Auflistung hatte aber den Zweck aufzulisten was im Bereich des 'generative Modelling' grundsätzlich denkbar ist.
 Existieren Daten und eine Architektur, die die Daten verarbeiten kann, ist jeder andere Datentyp genauso denkbar. Nach allen Lektionen werden wir eine Intuition dafür besitzen, wie diese Models prinzipiell funktionieren und werden in die Lage versetzt sein, dieses Wissen auf eigenen Probleme und Daten anzuwenden.
+
+
+#### Image Editing via Te
+
+...
+https://github.com/omriav/blended-diffusion
