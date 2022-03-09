@@ -50,4 +50,12 @@ Betrachten wir ein Neuronales Netz mit mehreren Convolutional Layers und Filtern
 
 ![](https://upload.wikimedia.org/wikipedia/commons/2/26/Deep_Learning.jpg)
 
+Wie werden die Seitendimensionen verringert?
+
+Wie wir bereits wissen, verringert sich, insofern wir auf Zero-Padding verzichten, die Seitendimensionen für jedes Layer automatisch. Jedoch ja mit einem 3x3x?-Filter um gerademal 2 Pixel. Möchte man also die Seitendimensionen drastischer verringern, müssen andere Techniken in Betracht gezogen werden. Es gibt 2 Varianten:
+
+1.) Strides. Definieren wir für eine 2-dimensionale Convolution bspw. einen Stride von (2, 2), so überspringt jeder
+
 Final eine kurze Erwähnung dazu, was es mit dem Detection Layer auf sich hat. Am Ende der Convolutions wird die Dimensionalität der letzten Featuremap zu 1D reduziert. Das heißt aus einer Matrix der Dimension 16x16x512 produzieren wir einen Vektor mit 16x16x512 = 131072 Skalaren, der die identische Information entählt. Dann können wir diesen Vektor in ein finales Fully-Connected Layer geben, welches den Output- bzw. die Output-Skalare produziert.
+
+
