@@ -1,4 +1,4 @@
-# Possible error
+## Possible error
 If you run into the following error you’ll want to navigate to the core.py file specified and change line 690 to: photoset = list(rsp)[0]
 
 File "C:\python\lib\site-packages\flickrapi\core.py", line 690, in data_walker
