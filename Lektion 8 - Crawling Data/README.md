@@ -1,5 +1,18 @@
 Beim Anfertigen von großen Datensets ist der automatisierte Download von Daten u.U. nützlich.
 Dieses Script lässt uns Bilddaten anhand eines angegebenen Tags über die Flickr-API runterladen.
+Notwendig sind die folgenden libs:
+
+```
+pip install pillow
+pip install flickrapi
+```
+
+Passe nun config_flickr.ini an und führe anschließend das Script aus:
+
+```
+python flickr-download.py
+```
+
 
 ## Possible error
 If you run into the following error you’ll want to navigate to the core.py file specified and change line 690 to: photoset = list(rsp)[0]
