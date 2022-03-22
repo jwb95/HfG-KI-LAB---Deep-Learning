@@ -65,7 +65,7 @@ Wollten wir also ein Netz aus ausschließlich Convolutions bauen, welches den gl
 
 <img src="https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%207%20-%20Convolutions/media/receptive_field2.jpg" width="1000" />
 
-Wie wir sehen lässt sich mit einem Pooling-Layer (siehe für Details die folgende Sektion), das in irgendeiner Form die Informationen aus 2 Pixeln zusammenfasst, das Receptive Field sehr "kostengünstig" verdoppeln. Jedoch besteht der Haken, dass wir ein Informationsbottleneck einbauen, wenn wir bspw. 2 Skalare zu einem zusammenfassen - es ist letzten Endes eine Kompression der Daten.
+Wie wir sehen lässt sich mit einem Pooling-Layer mit Poolsize =2 (siehe für Details die folgende Sektion), das in irgendeiner Form die Informationen aus 2 benachbarten Pixeln zusammenfasst, das Receptive Field sehr "kostengünstig" verdoppeln. Jedoch besteht der Haken, dass wir ein Informationsbottleneck einbauen, wenn wir bspw. 2 Skalare zu einem zusammenfassen - es ist letzten Endes eine Kompression der Daten.
 
 ## Wie werden die Seitendimensionen verringert?
 
