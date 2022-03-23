@@ -26,7 +26,7 @@ Zunächst benötigen wir eine konvexe Fehlerfunktion (= lossfunction) L(x,y). Hi
 Der Squared Error besitzt eine Eigenschaft, die ihn für unser Problem als Fehlerfunktion qualizifiert. Betrachten wir 2 Trainingsbeispiele mit jeweils dem Label ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a) und nehmen wir an, das Model gibt für das erste Beispiel ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a&plus;b) und für das zweite ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20a-b) aus, dann ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20L%28a&plus;b%2Ca%29%3DL%28a-b%2Ca%29).
 Übersetzt: Es ist egal, ob das Model für ein Trainingsbeispiel ein x ausgibt, welches zu hoch oder zu niedrig ist. Wesentlich für den Wert, den die Lossfunction annimmt ist nur der absolute Abstand von x zum Label y.
 
-### Test
+## Test
 
 Zunächst initialisieren wir das Model mit zufälligen Gewichten, z.B. w0 = 0.3 und w1 = -0.2
 
@@ -40,7 +40,7 @@ Errechnen wir dann den Squared Error:
 
 Wir sehen: Die Performance des Models lässt zu wünschen übrig und es gilt die Gewichte des Models so anzupassen, dass L sinkt.
 
-### Herleitung des Optimierungsalgorithmus
+## Herleitung des Optimierungsalgorithmus
 
 Damit L sinkt, müsste x verändert werden. Wir erinnern uns, dass wir gemäß Gradient Descent von x einen ausreichenden kleinen Teil der Ableitung von L(x,y) in Abhängigkeit von x abziehen müssten, damit sich x so verändert, dass L sinkt. Diese Ableitung gibt die Steigung der Tangente an, die für ein fixes y den Graphen von L(x,y) am Punkt (x, L(x,y)) berührt. Wir erinnern uns, dass sie auch als Quotient ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdL%28x%2Cy%29%7D%7Bdx%7D) schreibbar ist.
 
@@ -80,7 +80,7 @@ Da wir in jeder Iteration des Loops die beiden obigen Ableitungen benötigen ber
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7BdC%7D%7Bdw_1%7D%20%3D%202%28x-y%29%20x_1)
 
-### Beweise/Ableitungen
+## Beweise/Ableitungen
 
 #### Chain Rule: ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdx%7D%3D%5Cfrac%7Bdf%28g%28x%29%29%7D%7Bdg%28x%29%7D%5Ccdot%20%5Cfrac%7Bdg%28x%29%7D%7Bdx%7D)
 
