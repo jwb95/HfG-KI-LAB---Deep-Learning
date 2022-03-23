@@ -54,7 +54,7 @@ Betrachten wir ein Neuronales Netz mit mehreren Convolutional Layers und Filtern
 
 ## Receptive Field
 
-Betrachten wir ein eindimensionales, die Serienlänge erhaltendes Conv-Net mit 3 Layern mit jeweils einem Kernel der Größe 3, 10 Filern und Zero-Padding. Nach 3 Convolutions haben wir anstelle einer Serie mit Shape (x, 3) eine Featuremap mit Shape (x, n). Dann encodiert für jeden 'Pixel' die ihm zugeordnete Feature-Achse n Features, die eine Beschreibung des dem jeweiligen Pixel zugeordneten Ausschnitts der Serie darstellen. Wie groß ist ein solcher Ausschnitt?
+Betrachten wir ein eindimensionales, die Serienlänge erhaltendes Conv-Net mit 3 Layern mit jeweils einem Kernel der Größe 3, n Filtern und Zero-Padding. Nach 3 Convolutions haben wir anstelle einer Serie mit Shape (x, 3) eine Featuremap mit Shape (x, n). Dann encodiert für jeden 'Pixel' die ihm zugeordnete Feature-Achse n Features, die eine Beschreibung des dem jeweiligen Pixel zugeordneten Ausschnitts der Serie darstellen. Wie groß ist ein solcher Ausschnitt?
 Betrachte das folgende Schaubild: Jeder Pixel im untersten Layer wird von 3 benachbarten Pixeln der vorangestellten Featuremap beeinflusst - das ist logisch, denn ein jedes Feature des Pixels ist ja, gemäß der Kernel-Größe 3, die Summe der punktweisen Multiplikation der jeweiligen 3x1-Filtermatrix mit dem entsprechenden 3x1-Feauturemap-Ausschnitt. Wir sehen, jedes weitere Conv-Layer mit Kernel-Größe 3x1 erhöht die Anzahl der Pixel, die den Output-Pixel beeinflussen um 2.
 
 <img src="https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%207%20-%20Convolutions/media/receptive_field1.jpg" width="1000" />
