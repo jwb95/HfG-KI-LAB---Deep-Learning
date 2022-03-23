@@ -1,5 +1,5 @@
 Beim Anfertigen von großen Datensets ist der automatisierte Download von Daten u.U. nützlich.
-Dieses Script lässt uns Bilddaten anhand eines angegebenen Tags über die Flickr-API runterladen.
+Dieses Script von Jeff Heaton lässt uns Bilddaten anhand eines angegebenen Tags über die Flickr-API runterladen.
 Notwendig sind die folgenden libs:
 
 ```
