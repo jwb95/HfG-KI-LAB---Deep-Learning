@@ -7,3 +7,9 @@ Text-Prompt to 3D: https://arxiv.org/abs/2109.12922/
 Text-Prompt to 3D: https://github.com/google-research/google-research/tree/master/dreamfields
 
 3D-Mesh Style Transfer by Text-Prompt: https://threedle.github.io/text2mesh/
+
+
+
+# Notebooks for amateurs to use
+
+https://colab.research.google.com/github/ouhenio/StyleGAN3-CLIP-notebook/blob/main/StyleGAN3%2BCLIP.ipynb#scrollTo=bJOj_BWi_JwR
