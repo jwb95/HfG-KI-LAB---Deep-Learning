@@ -1,17 +1,7 @@
-Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in dem Interval, welches von der roten (x0) und der blauen (x0+h) Linie eingefasst wird. Dieses Interval hat die Größe/Breite h. Bewegen wir h nun in Richtung 0, so nähert sich die Hypotenuse der Tangente, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt, an. Ziehen wir einen ausreichend kleinen Anteil der Steigung dieser Tangente von x0 ab, so müsste sich x0 in Richtung 0 (wo sich das Minimum des grünen Graphen befindet) bewegen. Nach diesem Prinzip lässt sich x0 dem globalen Minimum jeder konvexen Funktion schrittweise annähern.
+In dieser Lektion lernen wir den Gradient Descent, den grundlegende Algorithmus kennen, der das Training Neuronaler Netze ermöglicht.
+Dazu machen wir zuerst ein paar mathematische Beobachtungen und implementieren anschließend einen Trainings-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x0 in Richtung des Minimums von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D) zu optimieren.
 
-
-Anhand des [Desmos-Graphen](https://www.desmos.com/calculator/weppwasdzw) lässt sich das gut sehen.
-
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/tangente.png)
-
-In dieser Lektion implementieren wir den beschriebenen Optimierungs-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x0 in Richtung des Minimums von  ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D) zu optimieren.
-
-
-
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/optimierung.png)
-
-Was ist Steigung?
+## Was ist Steigung?
 
 Steigung ist ein spezifischer Quotient.
 Ein Quotient drückt ein Verhältnis von zwei Größen als Resultat der Division der einen Größe durch die andere aus.
@@ -25,7 +15,17 @@ Im Sinne des folgenden Schaubilds wäre Δy=100m und Δx=1000m.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Slope_picture.svg/170px-Slope_picture.svg.png)
 
-Was ist eine Ableitung und wozu brauchen wir sie?
+## Eine geometrische Beobachtung
+
+Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in dem Interval, welches von der roten (x0) und der blauen (x0+h) Linie eingefasst wird. Dieses Interval hat die Größe/Breite h. Bewegen wir h nun in Richtung 0, so nähert sich die Hypotenuse der Tangente, die den grünen Graphen von f(x) am Punkt (x0, f(x0)) berührt, an. Ziehen wir einen ausreichend kleinen Anteil der Steigung dieser Tangente von x0 ab, so müsste sich x0 in Richtung 0 (wo sich das Minimum des grünen Graphen befindet) bewegen. Nach diesem Prinzip lässt sich x0 dem globalen Minimum jeder konvexen Funktion schrittweise annähern.
+
+
+Anhand des [Desmos-Graphen](https://www.desmos.com/calculator/weppwasdzw) lässt sich das gut sehen.
+
+![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/tangente.png)
+
+
+## Was ist eine Ableitung und wozu brauchen wir sie?
 
 Die allgemeine Definition der Ableitung ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20%5Cfrac%7Bdf%7D%7Bdx%7D) für eine Funktion f(x) in Abhängigkeit von x ist:
 
@@ -71,4 +71,3 @@ Für diesen Ausdruck ist es nun völlig legitim ![](https://latex.codecogs.com/p
 Den Optimierungsschritt können wir also folgendermaßen schreiben, wobei x_n die Schätzung von x0 nach n Schritten ist, entsprechend x_n+1 x0 nach n+1 Schritten darstellt und ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20%5Calpha) für die 'learningrate' steht, welche ein vom User heuristisch festgelegter kleiner Faktor ist, der sicherstellen soll, dass wir von x_n nicht mehr als einen ausreichend kleinen Teil der Ableitung von f(x_n) abziehen.
 
 ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B150%7D%20x_%7Bn&plus;1%7D%20%3D%20x_n%20-%202x_n%5Calpha)
-
