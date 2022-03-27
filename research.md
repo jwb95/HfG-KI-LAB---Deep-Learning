@@ -13,3 +13,5 @@ Text-Prompt to 3D: https://github.com/google-research/google-research/tree/maste
 # Notebooks for amateurs to use
 
 https://colab.research.google.com/github/ouhenio/StyleGAN3-CLIP-notebook/blob/main/StyleGAN3%2BCLIP.ipynb#scrollTo=bJOj_BWi_JwR
+
+https://colab.research.google.com/drive/1cg0LZ5OfN9LAIB37Xq49as0fSJxcKtC5#scrollTo=j7_oaqKSFsDY
