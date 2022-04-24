@@ -1,6 +1,6 @@
 In dieser Lektion lernen wir den Gradient Descent, den grundlegenden Algorithmus kennen, der das Training Neuronaler Netze ermöglicht.
 Dazu machen wir zuerst ein paar mathematische Beobachtungen und implementieren anschließend einen Trainings-Algorithmus, um ein zufälliges zwischen -4 und 4 initialisiertes x0 in Richtung des Minimums von ![](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20f%28x%29%3Dx%5E%7B2%7D) zu optimieren.
-Parallel zeigen wir auch eine Lösung via Trial and Error, die für dieses Problem genauso gut funktioniert. Wir werden jedoch zeitnah sehen, dass Trial and Error für große Deep-Learning-Systeme nicht funktionieren wird und wir Gradient Descent benötigen. Bis dahin also: 'Trust me bro/sis.' :D
+Parallel zeigen wir auch eine Lösung via Trial and Error, die für dieses Problem genauso gut funktioniert. Wir werden jedoch zeitnah sehen, dass Trial and Error für große Deep-Learning-Systeme nicht funktionieren wird und wir Gradient Descent benötigen.
 
 ## Was ist Steigung?
 
