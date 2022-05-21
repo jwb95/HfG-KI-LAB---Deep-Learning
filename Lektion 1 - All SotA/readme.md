@@ -50,6 +50,9 @@ Auf ganpaint.io kann man ein trainiertes Model dieser Art in Aktion erleben: <ht
 Für Domain-Translation ist es übrigens auch denkbar mit Domains zweier verschiedenere Datentype zu arbeiten: Z.B. Text2Image. <https://github.com/crowsonkb/v-diffusion-pytorch> Das zugehörige Datenset hat 12Mio Text-Image-Paare: <https://github.com/google-research-datasets/conceptual-12m>
 Unter Text2Image fallen auch Projekte wie Disco Diffusion, für welche es auf Reddit eine ganze Community gibt (https://www.reddit.com/r/DiscoDiffusion/comments/utwemf/off_planet/).
 
+
+![](https://i.redd.it/2m3aybg0in091.jpg)
+
 ![](https://preview.redd.it/h4uqesxpxm091.png?width=960&crop=smart&auto=webp&s=83895c72006bd22a81c3bb4e08b4b6c51e2837f4)
 
 #### Unpaired Domain-Translation
