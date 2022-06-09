@@ -5,7 +5,7 @@ import io
 from PIL import Image
 import time
 
-PATH = r"C:\Users\mberg\AppData\Local\Programs\Python\Python38\chromedriver.exe"
+PATH = r"/ABSOLUTE/PATH/TO/YOUR/chromedriver.exe"
 
 wd = webdriver.Chrome(PATH)
 
@@ -14,11 +14,12 @@ def get_images_from_google(wd, delay, max_images):
 		wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 		time.sleep(delay)
 
-	url = "https://www.google.com/search?q=rothwald&tbm=isch&ved=2ahUKEwj5m5md3J74AhWSIMUKHVIwD1QQ2-cCegQIABAA&oq=rothwald&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgQIABAYMgQIABAYOgcIABCxAxBDOggIABCABBCxAzoECAAQQzoLCAAQgAQQsQMQgwE6CAgAELEDEIMBUOYDWKQQYJQRaABwAHgAgAFziAG4BJIBAzguMZgBAKABAaoBC2d3cy13aXotaW1nsAEAwAEB&sclient=img&ei=DQqhYrnhJZLBlAbS4LygBQ&bih=817&biw=1707&rlz=1C1CHBF_enCA918CA918"
+	url = "https://www.google.com/search?as_st=y&tbm=isch&hl=de&as_q=pythons&as_epq=&as_oq=&as_eq=&cr=&as_sitesearch=&safe=images&tbs=isz:lt,islt:8mp"
 	wd.get(url)
 
 	image_urls = set()
 	skips = 0
+	count = 0
 
 	while len(image_urls) + skips < max_images:
 		scroll_down(wd)
@@ -41,8 +42,10 @@ def get_images_from_google(wd, delay, max_images):
 
 				if image.get_attribute('src') and 'http' in image.get_attribute('src'):
 					image_urls.add(image.get_attribute('src'))
+					new_url = image.get_attribute('src')
+					download_image("imgs/", new_url, str(count)+".jpg")
 					print(f"Found {len(image_urls)}")
-
+					count += 1
 	return image_urls
 
 
@@ -60,10 +63,9 @@ def download_image(download_path, url, file_name):
 	except Exception as e:
 		print('FAILED -', e)
 
-urls = get_images_from_google(wd, 1, 10)
-#print(urls)
+urls = get_images_from_google(wd, 1, 100)
 
-for i, url in enumerate(urls):
-	download_image("imgs/", url, str(i) + ".jpg")
+#for i, url in enumerate(urls):
+#	download_image("imgs/", url, str(i) + ".jpg")
 
 wd.quit()
