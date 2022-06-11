@@ -57,13 +57,13 @@ Betrachten wir ein Neuronales Netz mit mehreren Convolutional Layers und Filtern
 Betrachten wir ein eindimensionales, die Serienlänge erhaltendes Conv-Net mit 3 Layern mit jeweils einem Kernel der Größe 3, n Filtern und Zero-Padding. Nach 3 Convolutions haben wir anstelle einer Serie mit Shape (x, 3) eine Featuremap mit Shape (x, n). Dann encodiert für jeden 'Pixel' die ihm zugeordnete Feature-Achse n Features, die eine Beschreibung des dem jeweiligen Pixel zugeordneten Ausschnitts der Serie darstellen. Wie groß ist ein solcher Ausschnitt?
 Betrachte das folgende Schaubild: Jeder Pixel im untersten Layer wird von 3 benachbarten Pixeln der vorangestellten Featuremap beeinflusst - das ist logisch, denn ein jedes Feature des Pixels ist ja, gemäß der Kernel-Größe 3, die Summe der punktweisen Multiplikation der jeweiligen 3x1-Filtermatrix mit dem entsprechenden 3x1-Feauturemap-Ausschnitt. Wir sehen, jedes weitere Conv-Layer mit Kernel-Größe 3x1 erhöht die Anzahl der Pixel, die den Output-Pixel beeinflussen um 2.
 
-<img src="https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%207%20-%20Convolutions/media/receptive_field1.jpg" width="1000" />
+<img src="https://github.com/jwb95/HfG-KI-LAB---Deep-Learning/blob/main/Lektion%2007%20-%20Convolutions/media/receptive_field1.jpg" width="1000" />
 
 Das Receptive Field unseres Conv-Nets ist also =7. Das ist gleichbedeutend mit: Der längste Ausschnitt, den das Netzwerk zum 'Lernen' betrachten kann, beträgt 7 Pixel. Damit könnte, insofern die Input-Daten aus Serien, die länger als 7 Pixel sind, keinen globalen, sondern nur lokale Zusammenhänge aus den Daten gelernt werden.
 Analog für ein 2-dimensionales Conv-Net mit entsprechenden 3x3-Filtern wären die größten Bildausschnitte aus denen das Netz lernen könnte 7x7-Bildausschnitte.
 Wollten wir also ein Netz aus ausschließlich Convolutions bauen, welches den globalen Kontext für verhältnismäßig kleine Bilder mit bspw. 64x64 Pixeln betrachten können soll, so benötigten wir dafür mindestens 32 Convolutional Layers. Wie bereits gezeigt macht es vom Standpunkt der Effizienz also Sinn die Seitenlängen innerhalb des Netzwerkes zu verringern. Wie sieht es dann mit dem Receptive Field aus?
 
-<img src="https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%207%20-%20Convolutions/media/receptive_field2.jpg" width="1000" />
+<img src="https://github.com/jwb95/HfG-KI-LAB---Deep-Learning/blob/main/Lektion%2007%20-%20Convolutions/media/receptive_field2.jpg?raw=true" width="1000" />
 
 Wie wir sehen lässt sich mit einem Pooling-Layer mit Poolsize =2 (siehe für Details die folgende Sektion), das in irgendeiner Form die Informationen aus 2 benachbarten Pixeln zusammenfasst, das Receptive Field sehr "kostengünstig" verdoppeln. Jedoch besteht der Haken, dass wir ein Informationsbottleneck einbauen, wenn wir bspw. 2 Skalare zu einem zusammenfassen - es ist letzten Endes eine Kompression der Daten.
 
