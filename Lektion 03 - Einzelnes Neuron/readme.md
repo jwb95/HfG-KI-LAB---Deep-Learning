@@ -15,7 +15,7 @@ Betrachte ein Datenset (der Form [x0, x1] -> y) bestehend aus den folgenden 4 Tr
 Wir sehen: Immer dann, wenn x1 = 1, soll das Model den Wert 1, ansonsten 0 ausgeben.
 Eindeutig würde das optimierte Model wie im folgenden Schaubild aussehen:
 
-![](https://github.com/jwb95/HfG-KI-LAB---Deep-Learning/blob/main/Lektion%2003%20-%20Einzelnes%20Neuron/media/nn_optimized.jpg)
+![](https://github.com/jwb95/HfG-KI-LAB---Deep-Learning/blob/main/Lektion%2003%20-%20Einzelnes%20Neuron/media/nn_optimized.png)
 
 Der Zweck des Optimierens Neuronaler Netze besteht darin, dass eine annehmbare Lösung eines Problems in Form der richtigen Anpassung der Gewichte automatisiert für komplizierte Probleme, für die im Gegensatz zu unserem Beispiel eine Lösung nicht unbedingt ersichtlich ist, gefunden werden kann. Nutzen wir dennoch das Beispiel, um uns mit dem gängigen Optimierungs-Algorithmus für Neuronale Netze vertraut zu machen.
 
