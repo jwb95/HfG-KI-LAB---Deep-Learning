@@ -23,7 +23,7 @@ Die schwarze Linie ist die Hypotenuse des rechtwinkligen Steigungsdreiecks in de
 
 Anhand des [Desmos-Graphen](https://www.desmos.com/calculator/weppwasdzw) lässt sich das gut sehen.
 
-![](https://github.com/jwb95/HfG-KI-LAB/blob/main/Lektion%202%20-%20Gradientenabstieg/media/tangente.png)
+![](https://github.com/jwb95/HfG-KI-LAB---Deep-Learning/blob/main/Lektion%2002%20-%20Gradientenabstieg/media/tangente.png)
 
 
 ## Was ist eine Ableitung und wozu brauchen wir sie?
