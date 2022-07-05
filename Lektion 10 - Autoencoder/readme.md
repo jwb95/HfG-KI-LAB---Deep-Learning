@@ -2,7 +2,7 @@ In dieser Lektion machen wir uns mit der Abbildung von Daten in einen komprimier
 
 ## Injektivität
 
-Wir bauen in dieser Lektion eine neue Netzwerk-Architektur, den Autoencoder. Dieser besteht aus zwei Teilen bzw. Funktionen, die durch jeweils ein NN gelernt werden sollen. Eine davon soll ebenfalls einen hoch-dimensionalen Datenpunkt (wie ein Bild) auf eine komprimierte Repräsentation abbilden. Diese Funktion soll im Gegensatz zur Klassifikation injektiv sein. Injektiv bedeutet, dass jeder Funktionswert/Output, den die Funktion annehmen kann, maximal einmal (also nur durch einen einmaligen Input) angenommen werden kann.
+Wir bauen in dieser Lektion eine neue Netzwerk-Architektur, den Autoencoder. Dieser besteht aus zwei Teilen bzw. Funktionen, die durch jeweils ein NN gelernt werden sollen. Eine davon soll ebenfalls einen hoch-dimensionalen Datenpunkt (wie ein Bild) auf eine komprimierte Repräsentation abbilden. Diese Funktion soll im Gegensatz zur Klassifikation injektiv sein. Injektiv bedeutet, dass jeder Funktionswert/Output, den die Funktion annehmen kann, maximal einem Input zugeordnet wird.
 
 Eine 'klassifizierende' Funktion wie wir sie bereits bauten, ist nicht injektiv, denn mehrere Bilder werden durch sie auf die gleiche Klasse abgebildet. So würden möglicherweise zwei verschiedene Bilder der Ziffer 4 den gleichen Vektor [0, 0, 0, 0, 1, 0, 0, 0, 0, 0] produzieren.
 
