@@ -1,3 +1,5 @@
+Cats vs Dogs Dataset: 1tsZ2a_KHg3yp1FHxArWgllCs_pgvWtXg
+
 In dieser Lektion lernen wir ein neues Layer, das eine Alternative zum Fully-Connected-Layer darstellt, kennen: das Convolutional Layer.
 Es bildet die Basis für alle SotA-Models generativer Image- und Audio-Models. Im Notebook implementieren wir ein Conv-Net für Binary-Image-Classification (Hund oder Katze?).
 
